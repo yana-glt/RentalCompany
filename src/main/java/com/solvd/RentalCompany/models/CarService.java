@@ -13,6 +13,14 @@ public class CarService {
     public CarService() {
     }
 
+    public CarService(Integer id, Integer carId, Integer serviceCompanyId, Double price, Date date) {
+        this.id = id;
+        this.carId = carId;
+        this.serviceCompanyId = serviceCompanyId;
+        this.price = price;
+        this.date = date;
+    }
+
     public Integer getId() {
         return id;
     }

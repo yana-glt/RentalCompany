@@ -2,15 +2,17 @@ package com.solvd.RentalCompany.dao;
 
 import com.solvd.RentalCompany.models.CarService;
 
+import java.util.Optional;
+
 public class CarServiceDAO extends MySQLDAO implements ICarServiceDAO{
     @Override
-    public CarService getEntityById(int id) {
+    public Optional<CarService> getEntityById(Integer id) {
         return null;
     }
 
     @Override
-    public void updateEntity(CarService entity) {
-
+    public Optional<CarService> updateEntity(CarService entity, Integer id) {
+        return null;
     }
 
     @Override
@@ -19,7 +21,7 @@ public class CarServiceDAO extends MySQLDAO implements ICarServiceDAO{
     }
 
     @Override
-    public void removeEntity(int id) {
+    public void removeEntityById(Integer id) {
 
     }
 }

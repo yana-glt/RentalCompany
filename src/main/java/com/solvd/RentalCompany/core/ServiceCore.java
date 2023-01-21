@@ -1,18 +1,18 @@
-package com.solvd.RentalCompany.models;
+package com.solvd.RentalCompany.core;
 
 import java.util.Objects;
 
-public class Service {
+public class ServiceCore {
     private Integer id;
     private String name;
     private String address;
     private String phone;
     private String country;
 
-    public Service() {
+    public ServiceCore() {
     }
 
-    public Service(Integer id, String name, String address, String phone, String country) {
+    public ServiceCore(Integer id, String name, String address, String phone, String country) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -64,12 +64,8 @@ public class Service {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Service service = (Service) o;
-        return Objects.equals(id, service.id)
-                && Objects.equals(name, service.name)
-                && Objects.equals(address, service.address)
-                && Objects.equals(phone, service.phone)
-                && Objects.equals(country, service.country);
+        ServiceCore that = (ServiceCore) o;
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(address, that.address) && Objects.equals(phone, that.phone) && Objects.equals(country, that.country);
     }
 
     @Override
@@ -79,7 +75,7 @@ public class Service {
 
     @Override
     public String toString() {
-        return "Service{" +
+        return "ServiceCore{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +

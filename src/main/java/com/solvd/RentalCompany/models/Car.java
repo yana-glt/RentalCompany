@@ -15,6 +15,17 @@ public class Car {
     public Car() {
     }
 
+    public Car(Integer id, String vin, String categoryId, String brand, String model, String number, String year, Double dayPrice) {
+        this.id = id;
+        this.vin = vin;
+        this.categoryId = categoryId;
+        this.brand = brand;
+        this.model = model;
+        this.number = number;
+        this.year = year;
+        this.dayPrice = dayPrice;
+    }
+
     public Integer getId() {
         return id;
     }
