@@ -12,6 +12,13 @@ public class ServiceCore {
     public ServiceCore() {
     }
 
+    public ServiceCore(String name, String address, String phone, String country) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.country = country;
+    }
+
     public ServiceCore(Integer id, String name, String address, String phone, String country) {
         this.id = id;
         this.name = name;

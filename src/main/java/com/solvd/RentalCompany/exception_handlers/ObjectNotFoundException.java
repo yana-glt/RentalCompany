@@ -13,5 +13,4 @@ public class ObjectNotFoundException extends Exception {
     public Integer getObjectId() {
         return objectId;
     }
-
 }

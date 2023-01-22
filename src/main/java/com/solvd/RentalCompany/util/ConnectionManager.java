@@ -1,5 +1,8 @@
 package com.solvd.RentalCompany.util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +12,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionManager {
+    private final static Logger logger = LogManager.getLogger(ConnectionManager.class);
     private static ConnectionManager instance;
     private Connection connection;
     private ConnectionManager(){
@@ -20,11 +24,11 @@ public class ConnectionManager {
             String pwd = properties.getProperty("dbPass");
             this.connection = DriverManager.getConnection(url, user, pwd);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Database error", e.getMessage(), e.getErrorCode());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error(String.format("Failed to read information from database.properties file"), e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(String.format("Failed to read information from database.properties file"), e);
         }
     }
 
@@ -33,7 +37,7 @@ public class ConnectionManager {
             try {
                 connection.close();
             } catch (SQLException e) {
-                e.printStackTrace();
+                logger.error("Database error", e.getMessage(), e.getErrorCode());
             }
         }
     }
@@ -52,7 +56,7 @@ public class ConnectionManager {
                 }
             }
         }catch(SQLException e){
-            e.printStackTrace();
+            logger.error("Database error", e.getMessage(), e.getErrorCode());
         }
         return instance;
     }

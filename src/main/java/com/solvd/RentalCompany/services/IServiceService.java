@@ -10,5 +10,5 @@ public interface IServiceService {
 
     ServiceCore updateEntity(ServiceCore serviceCore, Integer id) throws ObjectNotFoundException;
 
-    String removeEntityById(Integer id);
+    void removeEntityById(Integer id);
 }
