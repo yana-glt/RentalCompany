@@ -68,13 +68,12 @@ public class Service {
         return Objects.equals(id, service.id)
                 && Objects.equals(name, service.name)
                 && Objects.equals(address, service.address)
-                && Objects.equals(phone, service.phone)
                 && Objects.equals(country, service.country);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, phone, country);
+        return Objects.hash(id, name, address, country);
     }
 
     @Override

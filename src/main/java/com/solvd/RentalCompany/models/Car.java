@@ -100,14 +100,12 @@ public class Car {
                 && Objects.equals(categoryId, car.categoryId)
                 && Objects.equals(brand, car.brand)
                 && Objects.equals(model, car.model)
-                && Objects.equals(number, car.number)
-                && Objects.equals(year, car.year)
-                && Objects.equals(dayPrice, car.dayPrice);
+                && Objects.equals(year, car.year);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, vin, categoryId, brand, model, number, year, dayPrice);
+        return Objects.hash(id, vin, categoryId, brand, model, year);
     }
 
     @Override

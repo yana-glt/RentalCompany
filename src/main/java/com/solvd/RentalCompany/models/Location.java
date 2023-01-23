@@ -1,29 +1,22 @@
-package com.solvd.RentalCompany.core;
+package com.solvd.RentalCompany.models;
 
 import java.util.Objects;
 
-public class ServiceCore {
+public class Location {
     private Integer id;
     private String name;
-    private String address;
     private String phone;
+    private String address;
     private String country;
 
-    public ServiceCore() {
+    public Location() {
     }
 
-    public ServiceCore(String name, String address, String phone, String country) {
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
-        this.country = country;
-    }
-
-    public ServiceCore(Integer id, String name, String address, String phone, String country) {
+    public Location(Integer id, String name, String phone, String address, String country) {
         this.id = id;
         this.name = name;
-        this.address = address;
         this.phone = phone;
+        this.address = address;
         this.country = country;
     }
 
@@ -43,20 +36,20 @@ public class ServiceCore {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getCountry() {
@@ -71,22 +64,25 @@ public class ServiceCore {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ServiceCore that = (ServiceCore) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(address, that.address) && Objects.equals(phone, that.phone) && Objects.equals(country, that.country);
+        Location location = (Location) o;
+        return Objects.equals(id, location.id)
+                && Objects.equals(name, location.name)
+                && Objects.equals(address, location.address)
+                && Objects.equals(country, location.country);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, phone, country);
+        return Objects.hash(id, name, address, country);
     }
 
     @Override
     public String toString() {
-        return "ServiceCore{" +
+        return "Location{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
                 ", country='" + country + '\'' +
                 '}';
     }
