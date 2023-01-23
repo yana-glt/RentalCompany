@@ -1,20 +1,27 @@
-package com.solvd.RentalCompany.models;
+package com.solvd.RentalCompany.core;
 
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
-public class CarService {
+public class CarServiceCore {
     private Integer id;
     private Integer carId;
     private Integer serviceId;
     private Double price;
     private LocalDate date;
 
-    public CarService() {
+    public CarServiceCore() {
     }
 
-    public CarService(Integer id, Integer carId, Integer serviceId, Double price, LocalDate date) {
+    public CarServiceCore(Integer carId, Integer serviceId, Double price, LocalDate date) {
+        this.carId = carId;
+        this.serviceId = serviceId;
+        this.price = price;
+        this.date = date;
+    }
+
+    public CarServiceCore(Integer id, Integer carId, Integer serviceId, Double price, LocalDate date) {
         this.id = id;
         this.carId = carId;
         this.serviceId = serviceId;
@@ -66,12 +73,8 @@ public class CarService {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CarService that = (CarService) o;
-        return Objects.equals(id, that.id)
-                && Objects.equals(carId, that.carId)
-                && Objects.equals(serviceId, that.serviceId)
-                && Objects.equals(price, that.price)
-                && Objects.equals(date, that.date);
+        CarServiceCore that = (CarServiceCore) o;
+        return Objects.equals(id, that.id) && Objects.equals(carId, that.carId) && Objects.equals(serviceId, that.serviceId) && Objects.equals(price, that.price) && Objects.equals(date, that.date);
     }
 
     @Override
@@ -81,7 +84,7 @@ public class CarService {
 
     @Override
     public String toString() {
-        return "CarService{" +
+        return "CarServiceCore{" +
                 "id=" + id +
                 ", carId=" + carId +
                 ", serviceId=" + serviceId +

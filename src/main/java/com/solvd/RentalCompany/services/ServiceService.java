@@ -41,16 +41,16 @@ public class ServiceService implements IServiceService{
 
     @Override
     public ServiceCore updateEntity(ServiceCore serviceCore, Integer id){
-        Optional<Service> optionalService = this.serviceDAO.updateEntity(serviceMapper.coreToModel(serviceCore), id);
+        Optional<Service> serviceOptional = this.serviceDAO.updateEntity(serviceMapper.coreToModel(serviceCore), id);
         try {
-            if (optionalService.isEmpty()) {
+            if (serviceOptional.isEmpty()) {
                 throw new ObjectNotFoundException("Object was not found!", serviceCore.getId());
             }
         }catch(ObjectNotFoundException e){
             logger.error("Object of class Service with id:" + e.getObjectId() + " was not found!", e.getMessage());
         }
         logger.error("Object of class Service has been successfully updated.");
-        return serviceMapper.modelToCore(optionalService.get());
+        return serviceMapper.modelToCore(serviceOptional.get());
     }
 
     @Override
@@ -59,4 +59,3 @@ public class ServiceService implements IServiceService{
         logger.info("Object of class Service has been successfully deleted.");
     }
 }
-

@@ -1,4 +1,5 @@
 package com.solvd.RentalCompany.dao;
 
-public abstract class MySQLDAO {
+public abstract class MySQLDAO{
+
 }
