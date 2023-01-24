@@ -1,9 +1,9 @@
-package com.solvd.RentalCompany.models;
+package com.solvd.RentalCompany.core;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Reservation {
+public class ReservationCore {
     private Integer id;
     private Integer clientId;
     private Integer employeeId;
@@ -13,10 +13,20 @@ public class Reservation {
     private LocalDate toDate;
     private Double price;
 
-    public Reservation() {
+    public ReservationCore() {
     }
 
-    public Reservation(Integer id, Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate, LocalDate toDate, Double price) {
+    public ReservationCore(Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate, LocalDate toDate, Double price) {
+        this.clientId = clientId;
+        this.employeeId = employeeId;
+        this.carId = carId;
+        this.insuranceId = insuranceId;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.price = price;
+    }
+
+    public ReservationCore(Integer id, Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate, LocalDate toDate, Double price) {
         this.id = id;
         this.clientId = clientId;
         this.employeeId = employeeId;
@@ -95,7 +105,7 @@ public class Reservation {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Reservation that = (Reservation) o;
+        ReservationCore that = (ReservationCore) o;
         return Objects.equals(id, that.id)
                 && Objects.equals(clientId, that.clientId)
                 && Objects.equals(employeeId, that.employeeId)
@@ -110,7 +120,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation{" +
+        return "ReservationCore{" +
                 "id=" + id +
                 ", clientId=" + clientId +
                 ", employeeId=" + employeeId +

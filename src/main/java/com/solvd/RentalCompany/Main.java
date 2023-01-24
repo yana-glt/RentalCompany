@@ -2,7 +2,6 @@ package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.core.*;
 import com.solvd.RentalCompany.services.*;
-
 import java.time.LocalDate;
 import java.time.Year;
 
@@ -163,5 +162,18 @@ public class Main {
 //      licenseService.removeEntityById(11);
 //      licenseService.removeEntityById(10);
 
+        IReservationService reservationService = new ReservationService();
+//      reservationService.createEntity(new ReservationCore(1, 2, 3, 1, LocalDate.of(2022, 12, 12), LocalDate.of(2022, 12, 14), 500.00));
+//      reservationService.createEntity(new ReservationCore(2, 1, 4, 2,LocalDate.of(2022, 12, 10), LocalDate.of(2022, 12, 12), 300.00));
+
+//      System.out.println(reservationService.getEntityById(1));
+//      System.out.println(reservationService.getEntityById(2));
+//      System.out.println(reservationService.getEntityById(12));
+
+//      reservationService.updateEntity(new ReservationCore(2, 2, 3, 1, LocalDate.of(2022, 12, 12), LocalDate.of(2022, 12, 14), 500.00), 12);
+//      reservationService.updateEntity(new ReservationCore(2, 2, 3, 1, LocalDate.of(2022, 12, 12), LocalDate.of(2022, 12, 14), 500.00), 13);
+
+//      reservationService.removeEntityById(13);
+//      reservationService.removeEntityById(12);
     }
 }
