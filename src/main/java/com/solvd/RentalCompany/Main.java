@@ -79,7 +79,6 @@ public class Main {
 //      insuranceTypeService.removeEntityById(10);
 //      insuranceTypeService.removeEntityById(11);
 
-
         ITechnicalInspectionService technicalInspectionService = new TechnicalInspectionService();
 //      technicalInspectionService.createEntity(new TechnicalInspectionCore(1, LocalDate.of(2022, 12, 12), "OOO"));
 //      technicalInspectionService.createEntity(new TechnicalInspectionCore(2, LocalDate.of(2022, 12, 15), "OOO"));
@@ -91,7 +90,21 @@ public class Main {
 //      technicalInspectionService.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 12), "OOO"), 10);
 //      technicalInspectionService.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 15), "OOO"), 11);
 
-      technicalInspectionService.removeEntityById(11);
-      technicalInspectionService.removeEntityById(10);
+//      technicalInspectionService.removeEntityById(11);
+//      technicalInspectionService.removeEntityById(10);
+
+        IDepartmentService departmentService = new DepartmentService();
+//      departmentService.createEntity(new DepartmentCore("IT", 10000.00, 20000.00));
+//      departmentService.createEntity(new DepartmentCore("IT", 5000.00, 10000.00));
+
+//      System.out.println(departmentService.getEntityById(1));
+//      System.out.println(departmentService.getEntityById(2));
+//      System.out.println(departmentService.getEntityById(7));
+
+//      departmentService.updateEntity(new DepartmentCore("OOO", 10000.00, 20000.00), 8);
+//      departmentService.updateEntity(new DepartmentCore("OOO", 10000.00, 20000.00), 9);
+
+//      departmentService.removeEntityById(8);
+//      departmentService.removeEntityById(9);
     }
 }
