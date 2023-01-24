@@ -118,7 +118,21 @@ public class Main {
 //      locationService.updateEntity(new LocationCore("FFF", "+48962620520", "jkxfvnjkvn", "USA"), 5);
 //      locationService.updateEntity(new LocationCore("FFF", "+48962620520", "jkxfvnjkvn", "USA"), 6);
 
-      locationService.removeEntityById(5);
-      locationService.removeEntityById(6);
+//      locationService.removeEntityById(5);
+//      locationService.removeEntityById(6);
+
+        IEmployeeService employeeService = new EmployeeService();
+//      employeeService.createEntity(new EmployeeCore("Bob", "Dilan", "bob@gmail.com", "+48526962514", 2000.00, 1, 1));
+//      employeeService.createEntity(new EmployeeCore("Bob", "Dilan", "bob@gmail.com", "+48526962514", 2000.00, 1, 1));
+
+//      System.out.println(employeeService.getEntityById(1));
+//      System.out.println(employeeService.getEntityById(2));
+//      System.out.println(employeeService.getEntityById(14));
+
+//      employeeService.updateEntity(new EmployeeCore("Li", "Dilan", "li@gmail.com", "+48526962514", 2500.00, 1, 1), 14);
+//      employeeService.updateEntity(new EmployeeCore("Rob", "Dilan", "rob@gmail.com", "+48526962514", 1500.00, 1, 1), 15);
+
+//      employeeService.removeEntityById(15);
+//      employeeService.removeEntityById(14);
     }
 }
