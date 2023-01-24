@@ -1,21 +1,29 @@
-package com.solvd.RentalCompany.models;
+package com.solvd.RentalCompany.core;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
-public class License {
+public class LicenseCore {
     private Integer id;
     private Integer clientId;
     private String number;
     private LocalDate issueDate;
     private LocalDate expiryDate;
-
     private Boolean isValid;
 
-    public License() {
+    public LicenseCore() {
     }
 
-    public License(Integer id, Integer clientId, String number, LocalDate issueDate, LocalDate expiryDate, Boolean isValid) {
+    public LicenseCore(Integer clientId, String number, LocalDate issueDate, LocalDate expiryDate, Boolean isValid) {
+        this.clientId = clientId;
+        this.number = number;
+        this.issueDate = issueDate;
+        this.expiryDate = expiryDate;
+        this.isValid = isValid;
+    }
+
+    public LicenseCore(Integer id, Integer clientId, String number, LocalDate issueDate, LocalDate expiryDate, Boolean isValid) {
         this.id = id;
         this.clientId = clientId;
         this.number = number;
@@ -76,12 +84,12 @@ public class License {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        License license = (License) o;
-        return Objects.equals(id, license.id)
-                && Objects.equals(clientId, license.clientId)
-                && Objects.equals(number, license.number)
-                && Objects.equals(issueDate, license.issueDate)
-                && Objects.equals(expiryDate, license.expiryDate);
+        LicenseCore that = (LicenseCore) o;
+        return Objects.equals(id, that.id)
+                && Objects.equals(clientId, that.clientId)
+                && Objects.equals(number, that.number)
+                && Objects.equals(issueDate, that.issueDate)
+                && Objects.equals(expiryDate, that.expiryDate);
     }
 
     @Override
@@ -91,7 +99,7 @@ public class License {
 
     @Override
     public String toString() {
-        return "License{" +
+        return "LicenseCore{" +
                 "id=" + id +
                 ", clientId=" + clientId +
                 ", number='" + number + '\'' +

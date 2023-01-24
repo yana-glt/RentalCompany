@@ -148,5 +148,20 @@ public class Main {
 
 //      clientService.removeEntityById(10);
 //      clientService.removeEntityById(11);
+
+        ILicenseService licenseService = new LicenseService();
+//      licenseService.createEntity(new LicenseCore(1, "9564884651", LocalDate.of(2020, 12, 15), LocalDate.of(2030, 12, 12), true));
+//      licenseService.createEntity(new LicenseCore(2, "8946541548", LocalDate.of(2021, 12, 15), LocalDate.of(2031, 12, 15), true));
+
+//      System.out.println(licenseService.getEntityById(1));
+//      System.out.println(licenseService.getEntityById(2));
+//      System.out.println(licenseService.getEntityById(10));
+
+//      licenseService.updateEntity(new LicenseCore(1, "000", LocalDate.of(2020, 12, 15), LocalDate.of(2030, 12, 12), true), 10);
+//      licenseService.updateEntity(new LicenseCore(1, "000", LocalDate.of(2020, 12, 15), LocalDate.of(2030, 12, 12), true), 11);
+
+//      licenseService.removeEntityById(11);
+//      licenseService.removeEntityById(10);
+
     }
 }
