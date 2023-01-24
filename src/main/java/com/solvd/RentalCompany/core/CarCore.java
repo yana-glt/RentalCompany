@@ -1,9 +1,9 @@
-package com.solvd.RentalCompany.models;
+package com.solvd.RentalCompany.core;
 
 import java.time.Year;
 import java.util.Objects;
 
-public class Car {
+public class CarCore {
     private Integer id;
     private String vin;
     private String categoryId;
@@ -13,10 +13,20 @@ public class Car {
     private Year year;
     private Double dayPrice;
 
-    public Car() {
+    public CarCore() {
     }
 
-    public Car(Integer id, String vin, String categoryId, String brand, String model, String number, Year year, Double dayPrice) {
+    public CarCore(String vin, String categoryId, String brand, String model, String number, Year year, Double dayPrice) {
+        this.vin = vin;
+        this.categoryId = categoryId;
+        this.brand = brand;
+        this.model = model;
+        this.number = number;
+        this.year = year;
+        this.dayPrice = dayPrice;
+    }
+
+    public CarCore(Integer id, String vin, String categoryId, String brand, String model, String number, Year year, Double dayPrice) {
         this.id = id;
         this.vin = vin;
         this.categoryId = categoryId;
@@ -95,13 +105,13 @@ public class Car {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(id, car.id)
-                && Objects.equals(vin, car.vin)
-                && Objects.equals(categoryId, car.categoryId)
-                && Objects.equals(brand, car.brand)
-                && Objects.equals(model, car.model)
-                && Objects.equals(year, car.year);
+        CarCore carCore = (CarCore) o;
+        return Objects.equals(id, carCore.id)
+                && Objects.equals(vin, carCore.vin)
+                && Objects.equals(categoryId, carCore.categoryId)
+                && Objects.equals(brand, carCore.brand)
+                && Objects.equals(model, carCore.model)
+                && Objects.equals(year, carCore.year);
     }
 
     @Override
@@ -111,14 +121,14 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "CarCore{" +
                 "id=" + id +
                 ", vin='" + vin + '\'' +
                 ", categoryId='" + categoryId + '\'' +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", number='" + number + '\'' +
-                ", year='" + year + '\'' +
+                ", year=" + year +
                 ", dayPrice=" + dayPrice +
                 '}';
     }

@@ -10,11 +10,25 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Optional;
 
 public class CarServiceDAO extends MySQLDAO implements ICarServiceDAO{
     private final static Logger logger = LogManager.getLogger(CarServiceDAO.class);
+    @Override
+    public CarService createEntity(CarService carService) {
+        final String sqlQuery = "INSERT INTO carService (car_id, service_id, price, date) VALUES (?,?,?,?)";
+        try(Connection connection = ConnectionPool.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);) {
+            preparedStatement.setInt(1, carService.getCarId());
+            preparedStatement.setInt(2, carService.getServiceId());
+            preparedStatement.setDouble(3, carService.getPrice());
+            preparedStatement.setObject(4, carService.getDate());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("Database error", e.getMessage(), e.getErrorCode());
+        }
+        return carService;
+    }
 
     @Override
     public Optional<CarService> getEntityById(Integer id) {
@@ -57,22 +71,6 @@ public class CarServiceDAO extends MySQLDAO implements ICarServiceDAO{
             logger.error("Database error", e.getMessage(), e.getErrorCode());
         }
         return Optional.empty();
-    }
-
-    @Override
-    public CarService createEntity(CarService carService) {
-        final String sqlQuery = "INSERT INTO carService (car_id, service_id, price, date) VALUES (?,?,?,?)";
-        try(Connection connection = ConnectionPool.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);) {
-            preparedStatement.setInt(1, carService.getCarId());
-            preparedStatement.setInt(2, carService.getServiceId());
-            preparedStatement.setDouble(3, carService.getPrice());
-            preparedStatement.setObject(4, carService.getDate());
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error("Database error", e.getMessage(), e.getErrorCode());
-        }
-        return carService;
     }
 
     @Override

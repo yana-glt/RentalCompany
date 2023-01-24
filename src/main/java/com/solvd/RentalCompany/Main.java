@@ -1,13 +1,12 @@
 package com.solvd.RentalCompany;
 
+import com.solvd.RentalCompany.core.CarCore;
 import com.solvd.RentalCompany.core.CarServiceCore;
 import com.solvd.RentalCompany.core.ServiceCore;
-import com.solvd.RentalCompany.services.CarServiceService;
-import com.solvd.RentalCompany.services.ICarServiceService;
-import com.solvd.RentalCompany.services.IServiceService;
-import com.solvd.RentalCompany.services.ServiceService;
+import com.solvd.RentalCompany.services.*;
 
 import java.time.LocalDate;
+import java.time.Year;
 
 public class Main {
     public static void main(String[] args){
@@ -38,5 +37,21 @@ public class Main {
 
 //      carServiceService.removeEntityById(11);
 //      carServiceService.removeEntityById(12);
+
+        ICarServiceS carServiceS = new CarServiceS();
+//      carServiceS.createEntity(new CarCore("KLX5484789DFCDV", "A", "Fiat", "500", "PL89564", Year.of(2020), 120.00));
+//      carServiceS.createEntity(new CarCore("KJO894515SDCS48", "B", "Ford", "Fiesta", "PL00265",Year.of(2020), 140.00));
+
+//      System.out.println(carServiceS.getEntityById(1));
+//      System.out.println(carServiceS.getEntityById(2));
+//      System.out.println(carServiceS.getEntityById(11));
+
+//        carServiceS.updateEntity(new CarCore("00000000", "A",
+//                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 16);
+//        carServiceS.updateEntity(new CarCore("000000", "A",
+//                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 17);
+
+//        carServiceS.removeEntityById(16);
+//        carServiceS.removeEntityById(17);
     }
 }

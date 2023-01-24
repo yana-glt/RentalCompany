@@ -49,7 +49,7 @@ public class CarServiceService implements ICarServiceService{
         }catch(ObjectNotFoundException e){
             logger.error("Object of class CarService with id:" + e.getObjectId() + " was not found!", e.getMessage());
         }
-        logger.error("Object of class CarService has been successfully updated.");
+        logger.info("Object of class CarService has been successfully updated.");
         return carServiceMapper.modelToCore(carServiceOptional.get());
     }
 

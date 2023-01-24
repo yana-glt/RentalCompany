@@ -49,7 +49,7 @@ public class ServiceService implements IServiceService{
         }catch(ObjectNotFoundException e){
             logger.error("Object of class Service with id:" + e.getObjectId() + " was not found!", e.getMessage());
         }
-        logger.error("Object of class Service has been successfully updated.");
+        logger.info("Object of class Service has been successfully updated.");
         return serviceMapper.modelToCore(serviceOptional.get());
     }
 

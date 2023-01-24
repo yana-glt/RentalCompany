@@ -4,7 +4,6 @@ import com.solvd.RentalCompany.models.Service;
 import com.solvd.RentalCompany.util.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +16,6 @@ public class ServiceDAO extends MySQLDAO implements IServiceDAO{
     @Override
     public Service createEntity(Service service) {
         final String sqlQuery = "INSERT INTO service (name, address, phone, country) VALUES (?,?,?,?)";
-
         try(Connection connection = ConnectionPool.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);) {
             preparedStatement.setString(1, service.getName());
