@@ -2,6 +2,7 @@ package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.core.CarCore;
 import com.solvd.RentalCompany.core.CarServiceCore;
+import com.solvd.RentalCompany.core.CategoryCore;
 import com.solvd.RentalCompany.core.ServiceCore;
 import com.solvd.RentalCompany.services.*;
 
@@ -53,5 +54,18 @@ public class Main {
 
 //        carServiceS.removeEntityById(16);
 //        carServiceS.removeEntityById(17);
+
+        ICategoryService categoryService = new CategoryService();
+//      categoryService.createEntity(new CategoryCore("Y", "YYYY", "sjdcnjskdcn kjs", 2.33));
+//      categoryService.createEntity(new CategoryCore("W", "WWWW", "+kjsxnjskxnsjkxn", 3.33));
+
+//      System.out.println(categoryService.getEntityById("A"));
+//      System.out.println(categoryService.getEntityById("Y"));
+
+//      categoryService.updateEntity(new CategoryCore("Y", "OOOO", "sjdcnjskdcn kjs", 2.33), "Y");
+//      categoryService.updateEntity(new CategoryCore("W", "OOOO", "+kjsxnjskxnsjkxn", 3.33), "W");
+
+//      categoryService.removeEntityById("Y");
+//      categoryService.removeEntityById( "W");
     }
 }

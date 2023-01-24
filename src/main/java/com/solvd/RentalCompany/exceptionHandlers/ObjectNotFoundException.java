@@ -1,6 +1,6 @@
 package com.solvd.RentalCompany.exceptionHandlers;
 
-public class ObjectNotFoundException extends Exception {
+public class ObjectNotFoundException extends Exception implements IObjectNotFoundException<Integer> {
 
     Integer objectId;
     public ObjectNotFoundException() {
