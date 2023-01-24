@@ -134,5 +134,19 @@ public class Main {
 
 //      employeeService.removeEntityById(15);
 //      employeeService.removeEntityById(14);
+
+        IClientService clientService = new ClientService();
+//      clientService.createEntity(new ClientCore("Bob", "Dilan", "bob@gmail.com", "+48526962514"));
+//      clientService.createEntity(new ClientCore("Bob", "Dilan", "bob@gmail.com", "+48526962514"));
+
+//      System.out.println(clientService.getEntityById(1));
+//      System.out.println(clientService.getEntityById(2));
+//      System.out.println(clientService.getEntityById(10));
+
+//      clientService.updateEntity(new ClientCore("Rob", "Dilan", "bob@gmail.com", "+48526962514"), 10);
+//      clientService.updateEntity(new ClientCore("Rob", "Dilan", "bob@gmail.com", "+48526962514"), 11);
+
+//      clientService.removeEntityById(10);
+//      clientService.removeEntityById(11);
     }
 }
