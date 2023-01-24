@@ -106,5 +106,19 @@ public class Main {
 
 //      departmentService.removeEntityById(8);
 //      departmentService.removeEntityById(9);
+
+        ILocationService locationService = new LocationService();
+//      locationService.createEntity(new LocationCore("FFF", "+48962620520", "jkxfvnjkvn", "USA"));
+//      locationService.createEntity(new LocationCore("DDD", "+48962620520", "mnkldfvnjdk", "USA"));
+
+//      System.out.println(locationService.getEntityById(1));
+//      System.out.println(locationService.getEntityById(2));
+//      System.out.println(locationService.getEntityById(6));
+
+//      locationService.updateEntity(new LocationCore("FFF", "+48962620520", "jkxfvnjkvn", "USA"), 5);
+//      locationService.updateEntity(new LocationCore("FFF", "+48962620520", "jkxfvnjkvn", "USA"), 6);
+
+      locationService.removeEntityById(5);
+      locationService.removeEntityById(6);
     }
 }
