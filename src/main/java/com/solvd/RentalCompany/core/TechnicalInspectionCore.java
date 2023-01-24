@@ -1,18 +1,24 @@
-package com.solvd.RentalCompany.models;
+package com.solvd.RentalCompany.core;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class TechnicalInspection {
+public class TechnicalInspectionCore {
     private Integer id;
     private Integer carId;
     private LocalDate date;
     private String organization;
 
-    public TechnicalInspection() {
+    public TechnicalInspectionCore() {
     }
 
-    public TechnicalInspection(Integer id, Integer carId, LocalDate date, String organization) {
+    public TechnicalInspectionCore(Integer carId, LocalDate date, String organization) {
+        this.carId = carId;
+        this.date = date;
+        this.organization = organization;
+    }
+
+    public TechnicalInspectionCore(Integer id, Integer carId, LocalDate date, String organization) {
         this.id = id;
         this.carId = carId;
         this.date = date;
@@ -55,7 +61,7 @@ public class TechnicalInspection {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TechnicalInspection that = (TechnicalInspection) o;
+        TechnicalInspectionCore that = (TechnicalInspectionCore) o;
         return Objects.equals(id, that.id)
                 && Objects.equals(carId, that.carId)
                 && Objects.equals(date, that.date)
@@ -69,7 +75,7 @@ public class TechnicalInspection {
 
     @Override
     public String toString() {
-        return "TechnicalInspection{" +
+        return "TechnicalInspectionCore{" +
                 "id=" + id +
                 ", carId=" + carId +
                 ", date=" + date +

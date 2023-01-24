@@ -23,7 +23,7 @@ public class Main {
 //      serviceService.removeEntityById(8);
 
         ICarServiceService carServiceService = new CarServiceService();
-//      carServiceService.createEntity(new CarServiceCore(2, 1, 5000.00, LocalDate.of(2022, 12, 12) ));
+//      carServiceService.createEntity(new CarServiceCore(2, 1, 5000.00, LocalDate.of(2022, 12, 12)));
 //      carServiceService.createEntity(new CarServiceCore(3, 2, 5000.00, LocalDate.of(2022, 12, 15)));
 
 //      System.out.println(carServiceService.getEntityById(1));
@@ -78,5 +78,20 @@ public class Main {
 
 //      insuranceTypeService.removeEntityById(10);
 //      insuranceTypeService.removeEntityById(11);
+
+
+        ITechnicalInspectionService technicalInspectionService = new TechnicalInspectionService();
+//      technicalInspectionService.createEntity(new TechnicalInspectionCore(1, LocalDate.of(2022, 12, 12), "OOO"));
+//      technicalInspectionService.createEntity(new TechnicalInspectionCore(2, LocalDate.of(2022, 12, 15), "OOO"));
+
+//      System.out.println(technicalInspectionService.getEntityById(1));
+//      System.out.println(technicalInspectionService.getEntityById(2));
+//      System.out.println(technicalInspectionService.getEntityById(11));
+
+//      technicalInspectionService.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 12), "OOO"), 10);
+//      technicalInspectionService.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 15), "OOO"), 11);
+
+      technicalInspectionService.removeEntityById(11);
+      technicalInspectionService.removeEntityById(10);
     }
 }
