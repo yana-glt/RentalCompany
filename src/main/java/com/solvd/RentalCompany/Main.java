@@ -1,9 +1,6 @@
 package com.solvd.RentalCompany;
 
-import com.solvd.RentalCompany.core.CarCore;
-import com.solvd.RentalCompany.core.CarServiceCore;
-import com.solvd.RentalCompany.core.CategoryCore;
-import com.solvd.RentalCompany.core.ServiceCore;
+import com.solvd.RentalCompany.core.*;
 import com.solvd.RentalCompany.services.*;
 
 import java.time.LocalDate;
@@ -67,5 +64,19 @@ public class Main {
 
 //      categoryService.removeEntityById("Y");
 //      categoryService.removeEntityById( "W");
+
+        IInsuranceTypeService insuranceTypeService = new InsuranceTypeService();
+//      insuranceTypeService.createEntity(new InsuranceTypeCore("B", 40.00, 8.00));
+//      insuranceTypeService.createEntity(new InsuranceTypeCore("D", 30.00, 6.00));
+
+//      System.out.println(insuranceTypeService.getEntityById(1));
+//      System.out.println(insuranceTypeService.getEntityById(2));
+//      System.out.println(insuranceTypeService.getEntityById(11));
+
+//      insuranceTypeService.updateEntity(new InsuranceTypeCore("A", 40.00, 8.00), 10);
+//      insuranceTypeService.updateEntity(new InsuranceTypeCore("A", 30.00, 6.00), 11);
+
+//      insuranceTypeService.removeEntityById(10);
+//      insuranceTypeService.removeEntityById(11);
     }
 }
