@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.EmployeeCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IEmployeeMapper;
 import com.solvd.RentalCompany.models.Employee;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class EmployeeMapper implements IEmployeeMapper{
+public class EmployeeMapper implements IEmployeeMapper {
     private final static Logger logger = LogManager.getLogger(EmployeeMapper.class);
 
     @Override

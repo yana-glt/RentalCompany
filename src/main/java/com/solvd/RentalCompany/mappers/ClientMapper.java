@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.ClientCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IClientMapper;
 import com.solvd.RentalCompany.models.Client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ClientMapper implements IClientMapper{
+public class ClientMapper implements IClientMapper {
     private final static Logger logger = LogManager.getLogger(ClientMapper.class);
     @Override
     public ClientCore modelToCore(Client client) {

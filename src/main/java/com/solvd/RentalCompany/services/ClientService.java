@@ -5,7 +5,7 @@ import com.solvd.RentalCompany.dao.ClientDAO;
 import com.solvd.RentalCompany.dao.IClientDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
 import com.solvd.RentalCompany.mappers.ClientMapper;
-import com.solvd.RentalCompany.mappers.IClientMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IClientMapper;
 import com.solvd.RentalCompany.models.Client;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

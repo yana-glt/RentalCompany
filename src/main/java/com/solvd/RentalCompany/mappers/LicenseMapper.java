@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.LicenseCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ILicenseMapper;
 import com.solvd.RentalCompany.models.License;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class LicenseMapper implements ILicenseMapper{
+public class LicenseMapper implements ILicenseMapper {
     private final static Logger logger = LogManager.getLogger(LicenseMapper.class);
     @Override
     public LicenseCore modelToCore(License license) {

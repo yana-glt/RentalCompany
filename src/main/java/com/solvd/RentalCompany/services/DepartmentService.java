@@ -5,7 +5,7 @@ import com.solvd.RentalCompany.dao.DepartmentDAO;
 import com.solvd.RentalCompany.dao.IDepartmentDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
 import com.solvd.RentalCompany.mappers.DepartmentMapper;
-import com.solvd.RentalCompany.mappers.IDepartmentMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IDepartmentMapper;
 import com.solvd.RentalCompany.models.Department;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

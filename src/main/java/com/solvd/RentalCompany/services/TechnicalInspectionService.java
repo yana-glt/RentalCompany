@@ -4,7 +4,7 @@ import com.solvd.RentalCompany.core.TechnicalInspectionCore;
 import com.solvd.RentalCompany.dao.ITechnicalInspectionDAO;
 import com.solvd.RentalCompany.dao.TechnicalInspectionDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
-import com.solvd.RentalCompany.mappers.ITechnicalInspectionMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ITechnicalInspectionMapper;
 import com.solvd.RentalCompany.mappers.TechnicalInspectionMapper;
 import com.solvd.RentalCompany.models.TechnicalInspection;
 import org.apache.logging.log4j.LogManager;

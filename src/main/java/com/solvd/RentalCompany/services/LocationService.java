@@ -4,7 +4,7 @@ import com.solvd.RentalCompany.core.LocationCore;
 import com.solvd.RentalCompany.dao.ILocationDAO;
 import com.solvd.RentalCompany.dao.LocationDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
-import com.solvd.RentalCompany.mappers.ILocationMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ILocationMapper;
 import com.solvd.RentalCompany.mappers.LocationMapper;
 import com.solvd.RentalCompany.models.Location;
 import org.apache.logging.log4j.LogManager;

@@ -5,7 +5,7 @@ import com.solvd.RentalCompany.dao.CarServiceDAO;
 import com.solvd.RentalCompany.dao.ICarServiceDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
 import com.solvd.RentalCompany.mappers.CarServiceMapper;
-import com.solvd.RentalCompany.mappers.ICarServiceMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ICarServiceMapper;
 import com.solvd.RentalCompany.models.CarService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

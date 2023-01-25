@@ -5,7 +5,7 @@ import com.solvd.RentalCompany.dao.EmployeeDAO;
 import com.solvd.RentalCompany.dao.IEmployeeDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
 import com.solvd.RentalCompany.mappers.EmployeeMapper;
-import com.solvd.RentalCompany.mappers.IEmployeeMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IEmployeeMapper;
 import com.solvd.RentalCompany.models.Employee;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

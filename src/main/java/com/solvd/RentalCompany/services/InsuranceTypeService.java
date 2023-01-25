@@ -4,7 +4,7 @@ import com.solvd.RentalCompany.core.InsuranceTypeCore;
 import com.solvd.RentalCompany.dao.IInsuranceTypeDAO;
 import com.solvd.RentalCompany.dao.InsuranceTypeDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
-import com.solvd.RentalCompany.mappers.IInsuranceTypeMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IInsuranceTypeMapper;
 import com.solvd.RentalCompany.mappers.InsuranceTypeMapper;
 import com.solvd.RentalCompany.models.InsuranceType;
 import org.apache.logging.log4j.LogManager;

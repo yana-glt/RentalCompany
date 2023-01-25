@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.CarCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ICarMapper;
 import com.solvd.RentalCompany.models.Car;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CarMapper implements ICarMapper{
+public class CarMapper implements ICarMapper {
     private final static Logger logger = LogManager.getLogger(CarMapper.class);
 
     @Override

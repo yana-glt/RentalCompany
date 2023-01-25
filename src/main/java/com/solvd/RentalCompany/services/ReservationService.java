@@ -4,7 +4,7 @@ import com.solvd.RentalCompany.core.ReservationCore;
 import com.solvd.RentalCompany.dao.IReservationDAO;
 import com.solvd.RentalCompany.dao.ReservationDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
-import com.solvd.RentalCompany.mappers.IReservationMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IReservationMapper;
 import com.solvd.RentalCompany.mappers.ReservationMapper;
 import com.solvd.RentalCompany.models.Reservation;
 import org.apache.logging.log4j.LogManager;

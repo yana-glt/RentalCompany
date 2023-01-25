@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.CategoryCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ICategoryMapper;
 import com.solvd.RentalCompany.models.Category;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CategoryMapper implements ICategoryMapper{
+public class CategoryMapper implements ICategoryMapper {
 
     private final static Logger logger = LogManager.getLogger(CategoryMapper.class);
     @Override

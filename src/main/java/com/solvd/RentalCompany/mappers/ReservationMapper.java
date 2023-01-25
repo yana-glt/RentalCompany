@@ -1,6 +1,7 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.ReservationCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IReservationMapper;
 import com.solvd.RentalCompany.models.Reservation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

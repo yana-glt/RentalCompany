@@ -4,7 +4,7 @@ import com.solvd.RentalCompany.core.LicenseCore;
 import com.solvd.RentalCompany.dao.ILicenseDAO;
 import com.solvd.RentalCompany.dao.LicenseDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
-import com.solvd.RentalCompany.mappers.ILicenseMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ILicenseMapper;
 import com.solvd.RentalCompany.mappers.LicenseMapper;
 import com.solvd.RentalCompany.models.License;
 import org.apache.logging.log4j.LogManager;

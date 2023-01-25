@@ -1,6 +1,7 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.InsuranceTypeCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IInsuranceTypeMapper;
 import com.solvd.RentalCompany.models.InsuranceType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

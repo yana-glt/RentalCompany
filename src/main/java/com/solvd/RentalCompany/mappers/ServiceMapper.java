@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.ServiceCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IServiceMapper;
 import com.solvd.RentalCompany.models.Service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ServiceMapper implements IServiceMapper{
+public class ServiceMapper implements IServiceMapper {
     private final static Logger logger = LogManager.getLogger(ServiceMapper.class);
     @Override
     public ServiceCore modelToCore(Service service) {

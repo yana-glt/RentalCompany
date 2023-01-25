@@ -5,7 +5,7 @@ import com.solvd.RentalCompany.dao.CategoryDAO;
 import com.solvd.RentalCompany.dao.ICategoryDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundExceptionForStringId;
 import com.solvd.RentalCompany.mappers.CategoryMapper;
-import com.solvd.RentalCompany.mappers.ICategoryMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ICategoryMapper;
 import com.solvd.RentalCompany.models.Category;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

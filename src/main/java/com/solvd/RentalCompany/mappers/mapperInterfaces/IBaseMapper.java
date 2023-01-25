@@ -1,4 +1,4 @@
-package com.solvd.RentalCompany.mappers;
+package com.solvd.RentalCompany.mappers.mapperInterfaces;
 
 public interface IBaseMapper <P, R>{
 

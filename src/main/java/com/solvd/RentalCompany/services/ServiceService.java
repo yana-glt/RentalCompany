@@ -4,7 +4,7 @@ import com.solvd.RentalCompany.core.ServiceCore;
 import com.solvd.RentalCompany.dao.IServiceDAO;
 import com.solvd.RentalCompany.dao.ServiceDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
-import com.solvd.RentalCompany.mappers.IServiceMapper;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IServiceMapper;
 import com.solvd.RentalCompany.mappers.ServiceMapper;
 import com.solvd.RentalCompany.models.Service;
 import org.apache.logging.log4j.LogManager;

@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.DepartmentCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.IDepartmentMapper;
 import com.solvd.RentalCompany.models.Department;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class DepartmentMapper implements IDepartmentMapper{
+public class DepartmentMapper implements IDepartmentMapper {
     private final static Logger logger = LogManager.getLogger(DepartmentMapper.class);
     @Override
     public DepartmentCore modelToCore(Department department) {

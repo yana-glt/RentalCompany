@@ -1,11 +1,12 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.LocationCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ILocationMapper;
 import com.solvd.RentalCompany.models.Location;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class LocationMapper implements ILocationMapper{
+public class LocationMapper implements ILocationMapper {
     private final static Logger logger = LogManager.getLogger(LocationMapper.class);
     @Override
     public LocationCore modelToCore(Location location) {

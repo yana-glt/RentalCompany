@@ -1,6 +1,7 @@
 package com.solvd.RentalCompany.mappers;
 
 import com.solvd.RentalCompany.core.TechnicalInspectionCore;
+import com.solvd.RentalCompany.mappers.mapperInterfaces.ITechnicalInspectionMapper;
 import com.solvd.RentalCompany.models.TechnicalInspection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
