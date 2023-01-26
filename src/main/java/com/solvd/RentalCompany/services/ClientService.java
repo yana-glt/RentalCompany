@@ -17,8 +17,8 @@ public class ClientService implements IClientService{
     private final IClientMapper clientMapper = new ClientMapper();
     @Override
     public ClientCore createEntity(ClientCore clientCore) {
-        Client employee = clientMapper.coreToModel(clientCore);
-        Client savedClient = this.clientDAO.createEntity(employee);
+        Client client = clientMapper.coreToModel(clientCore);
+        Client savedClient = this.clientDAO.createEntity(client);
         logger.info("Object of class Client has been successfully created.");
         return clientCore;
     }

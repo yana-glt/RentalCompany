@@ -17,9 +17,6 @@ public class ReservationService implements IReservationService{
 
     private final IReservationDAO reservationDAO = new ReservationDAO();
     private final IClientDAO clientDAO = new ClientDAO();
-    private final ICarDAO carDAO = new CarDAO();
-    private final IEmployeeDAO employeeDAO = new EmployeeDAO();
-    private final IInsuranceTypeDAO insuranceTypeDAO = new InsuranceTypeDAO();
     private final IReservationMapper reservationMapper = new ReservationMapper();
     private final IClientMapper clientMapper = new ClientMapper();
     private final ICarMapper carMapper = new CarMapper();
@@ -32,9 +29,20 @@ public class ReservationService implements IReservationService{
         logger.info("Object of class Reservation has been successfully created.");
         return reservationCore;
     }
-    public ReservationCore createEntity(Client client, Car car, Employee employee, InsuranceType insuranceType, LocalDate dateFrom, LocalDate dateTo) {
+
+    public ReservationCore createEntity(ClientCore clientCore, CarCore carCore, EmployeeCore employeeCore, InsuranceTypeCore insuranceTypeCore, LocalDate dateFrom, LocalDate dateTo) {
+        Client client = clientMapper.coreToModel(clientCore);
+        Car car = carMapper.coreToModel(carCore);
+        Employee employee = employeeMapper.coreToModel(employeeCore);
+        InsuranceType insuranceType = insuranceTypeMapper.coreToModel(insuranceTypeCore);
         Reservation reservation = new Reservation();
-        reservation.setClientId(client.getId());
+        Optional<Client> optionalClient = clientDAO.getEntityById(client.getId());
+        if(optionalClient.isEmpty()){
+            Client savedClient = clientDAO.createEntity(client);
+            logger.info("Object of class Client has been successfully created.");
+        }else{
+            reservation.setClientId(optionalClient.get().getId());
+        }
         reservation.setCarId(car.getId());
         reservation.setEmployeeId(employee.getId());
         reservation.setInsuranceId(insuranceType.getId());
@@ -46,9 +54,20 @@ public class ReservationService implements IReservationService{
         ReservationCore reservationCore = reservationMapper.modelToCore(reservation);
         return reservationCore;
     }
-    public ReservationCore createEntity(Client client, Car car, Employee employee, InsuranceType insuranceType, LocalDate dateTo) {
+
+    public ReservationCore createEntity(ClientCore clientCore, CarCore carCore, EmployeeCore employeeCore, InsuranceTypeCore insuranceTypeCore, LocalDate dateTo) {
+        Client client = clientMapper.coreToModel(clientCore);
+        Car car = carMapper.coreToModel(carCore);
+        Employee employee = employeeMapper.coreToModel(employeeCore);
+        InsuranceType insuranceType = insuranceTypeMapper.coreToModel(insuranceTypeCore);
         Reservation reservation = new Reservation();
-        reservation.setClientId(client.getId());
+        Optional<Client> optionalClient = clientDAO.getEntityById(client.getId());
+        if(optionalClient.isEmpty()){
+            Client savedClient = clientDAO.createEntity(client);
+            logger.info("Object of class Client has been successfully created.");
+        }else{
+            reservation.setClientId(optionalClient.get().getId());
+        }
         reservation.setCarId(car.getId());
         reservation.setEmployeeId(employee.getId());
         reservation.setInsuranceId(insuranceType.getId());
@@ -60,9 +79,19 @@ public class ReservationService implements IReservationService{
         ReservationCore reservationCore = reservationMapper.modelToCore(reservation);
         return reservationCore;
     }
-    public ReservationCore createEntity(Client client, Car car, Employee employee, InsuranceType insuranceType) {
+    public ReservationCore createEntity(ClientCore clientCore, CarCore carCore, EmployeeCore employeeCore, InsuranceTypeCore insuranceTypeCore) {
+        Client client = clientMapper.coreToModel(clientCore);
+        Car car = carMapper.coreToModel(carCore);
+        Employee employee = employeeMapper.coreToModel(employeeCore);
+        InsuranceType insuranceType = insuranceTypeMapper.coreToModel(insuranceTypeCore);
         Reservation reservation = new Reservation();
-        reservation.setClientId(client.getId());
+        Optional<Client> optionalClient = clientDAO.getEntityById(client.getId());
+        if(optionalClient.isEmpty()){
+            Client savedClient = clientDAO.createEntity(client);
+            logger.info("Object of class Client has been successfully created.");
+        }else{
+            reservation.setClientId(optionalClient.get().getId());
+        }
         reservation.setCarId(car.getId());
         reservation.setEmployeeId(employee.getId());
         reservation.setInsuranceId(insuranceType.getId());

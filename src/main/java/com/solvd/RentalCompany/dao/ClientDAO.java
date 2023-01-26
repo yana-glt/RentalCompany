@@ -41,7 +41,6 @@ public class ClientDAO extends MySQLDAO implements IClientDAO{
                     String surname = resultSet.getString(3);
                     String email = resultSet.getString(4);
                     String phone = resultSet.getString(5);
-
                     Client client = new Client(clientId, name, surname, email, phone);
                     return Optional.of(client);
                 }

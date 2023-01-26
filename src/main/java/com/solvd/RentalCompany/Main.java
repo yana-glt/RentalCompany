@@ -177,16 +177,16 @@ public class Main {
 //      reservationService.updateEntity(new ReservationCore(2, 2, 3, 1, LocalDate.of(2022, 12, 12), LocalDate.of(2022, 12, 14), 500.00), 12);
 //      reservationService.updateEntity(new ReservationCore(2, 2, 3, 1, LocalDate.of(2022, 12, 12), LocalDate.of(2022, 12, 14), 500.00), 13);
 
-//      reservationService.removeEntityById(13);
-//      reservationService.removeEntityById(12);
+//      reservationService.removeEntityById(15);
+//      reservationService.removeEntityById(16);
 
-//        reservationService.createEntity(new ReservationCore(
-//                new Client(1, "Bruce", "Ernst", "bruceernst@gmail.com", "+48962512321"),
-//                new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00),
-//                new Employee(1, "Tara", "Shelton", "taraShelton@gmail.com", "+48603203210", 900.00, 1, 1),
-//                new InsuranceType(1, "A", 30.00, 6.00),
-//                LocalDate.of(2022, 12, 14),
-//                LocalDate.of(2022, 12, 15)));
+//        reservationService.createEntity(
+//                new ClientCore(1, "Bruce", "Ernst", "bruceernst@gmail.com", "+48962512321"),
+//                new CarCore(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00),
+//                new EmployeeCore(1, "Tara", "Shelton", "taraShelton@gmail.com", "+48603203210", 900.00, 1, 1),
+//                new InsuranceTypeCore(1, "A", 30.00, 6.00), LocalDate.of(2022, 12, 14),
+//                LocalDate.of(2022, 12, 15));
+
 
 //        reservationService.createEntity(new ReservationCore(
 //                new Client(1, "Bruce", "Ernst", "bruceernst@gmail.com", "+48962512321"),

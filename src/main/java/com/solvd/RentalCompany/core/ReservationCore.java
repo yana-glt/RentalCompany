@@ -42,7 +42,7 @@ public class ReservationCore {
         this.price = price;
     }
 
-    public ReservationCore(Client client, Car car, Employee employee, InsuranceType it, LocalDate fd, LocalDate td) {
+    public ReservationCore(ClientCore client, CarCore car, EmployeeCore employee, InsuranceTypeCore it, LocalDate fd, LocalDate td) {
         this.clientId = client.getId();
         this.employeeId = employee.getId();
         this.carId = car.getId();
