@@ -27,6 +27,23 @@ public class Reservation {
         this.price = price;
     }
 
+    public Reservation(Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate, LocalDate toDate) {
+        this.clientId = clientId;
+        this.employeeId = employeeId;
+        this.carId = carId;
+        this.insuranceId = insuranceId;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+    }
+
+    public Reservation(Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate) {
+        this.clientId = clientId;
+        this.employeeId = employeeId;
+        this.carId = carId;
+        this.insuranceId = insuranceId;
+        this.fromDate = fromDate;
+    }
+
     public Integer getId() {
         return id;
     }

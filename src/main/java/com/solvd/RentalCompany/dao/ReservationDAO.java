@@ -24,7 +24,10 @@ public class ReservationDAO extends MySQLDAO implements IReservationDAO{
             preparedStatement.setInt(4, reservation.getInsuranceId());
             preparedStatement.setObject(5, reservation.getFromDate());
             preparedStatement.setObject(6, reservation.getToDate());
-            preparedStatement.setDouble(7, reservation.getPrice());
+            if(reservation.getToDate() != null){preparedStatement.setObject(6, reservation.getToDate());}
+            else{preparedStatement.setObject(6, null);}
+            if(reservation.getPrice() != null){preparedStatement.setDouble(7, reservation.getPrice());}
+            else{preparedStatement.setDouble(7, 0.00);}
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             logger.error("Database error", e.getMessage(), e.getErrorCode());

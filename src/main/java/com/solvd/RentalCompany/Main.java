@@ -1,6 +1,10 @@
 package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.core.*;
+import com.solvd.RentalCompany.models.Car;
+import com.solvd.RentalCompany.models.Client;
+import com.solvd.RentalCompany.models.Employee;
+import com.solvd.RentalCompany.models.InsuranceType;
 import com.solvd.RentalCompany.services.*;
 import java.time.LocalDate;
 import java.time.Year;
@@ -175,5 +179,20 @@ public class Main {
 
 //      reservationService.removeEntityById(13);
 //      reservationService.removeEntityById(12);
+
+//        reservationService.createEntity(new ReservationCore(
+//                new Client(1, "Bruce", "Ernst", "bruceernst@gmail.com", "+48962512321"),
+//                new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00),
+//                new Employee(1, "Tara", "Shelton", "taraShelton@gmail.com", "+48603203210", 900.00, 1, 1),
+//                new InsuranceType(1, "A", 30.00, 6.00),
+//                LocalDate.of(2022, 12, 14),
+//                LocalDate.of(2022, 12, 15)));
+
+//        reservationService.createEntity(new ReservationCore(
+//                new Client(1, "Bruce", "Ernst", "bruceernst@gmail.com", "+48962512321"),
+//                new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00),
+//                new Employee(1, "Tara", "Shelton", "taraShelton@gmail.com", "+48603203210", 900.00, 1, 1),
+//                new InsuranceType(1, "A", 30.00, 6.00),
+//                LocalDate.now()));
     }
 }

@@ -1,5 +1,10 @@
 package com.solvd.RentalCompany.core;
 
+import com.solvd.RentalCompany.models.Car;
+import com.solvd.RentalCompany.models.Client;
+import com.solvd.RentalCompany.models.Employee;
+import com.solvd.RentalCompany.models.InsuranceType;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -35,6 +40,23 @@ public class ReservationCore {
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.price = price;
+    }
+
+    public ReservationCore(Client client, Car car, Employee employee, InsuranceType it, LocalDate fd, LocalDate td) {
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = it.getId();
+        this.fromDate = fd;
+        this.toDate = td;
+    }
+
+    public ReservationCore(Client client, Car car, Employee employee, InsuranceType it, LocalDate fd) {
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = it.getId();
+        this.fromDate = fd;
     }
 
     public Integer getId() {
