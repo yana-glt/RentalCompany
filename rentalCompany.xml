@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rentalCompany>
+    <cars>
+        <car id = "1">
+            <vin>XLM8592KM00152L56</vin>>
+            <category_id>A</category_id>
+            <brand>Kia</brand>>
+            <model>Picanto</model>
+            <number>RJA4198</number>>
+            <year>2020</year>>
+            <day_price>100.00</day_price>>
+        </car>
+        <car id = "2">
+            <vin>PKT001KW945444878</vin>>
+            <category_id>A</category_id>
+            <brand>Fiat</brand>>
+            <model>500</model>
+            <number>PLO7003</number>>
+            <year>2019</year>>
+            <day_price>115.00</day_price>>
+        </car>
+        <car id = "3">
+            <vin>LTY9003HY8521P961</vin>>
+            <category_id>B</category_id>
+            <brand>Volkswagen</brand>>
+            <model>Polo</model>
+            <number>XP57982</number>>
+            <year>2019</year>>
+            <day_price>130.00</day_price>>
+        </car>
+    </cars>
+    <services>
+        <service id = "1">
+            <name>Robert Bosch Sp.z o.o.</name>
+            <address>Jutrzenki 45 02-231 Warszawa</address>
+            <phone>+48227854343</phone>
+            <country>Poland</country>>
+        </service>
+        <service id = "2">
+            <name>VAT services</name>
+            <address>Jose Abascal 57 28003 Madrid</address>
+            <phone>+34917596517</phone>
+            <country>Spain</country>>
+        </service>
+        <service id = "3">
+            <name>DKV Euro Service France</name>
+            <address>13 - 17 rue Pages 92150 Suresnes</address>
+            <phone>+33140990167</phone>
+            <country>France</country>>
+        </service>
+    </services>
+    <car_services>
+        <car_service id = "1">
+            <car_id>1</car_id>
+            <service_id>2</service_id>
+            <price>1000.00</price>
+            <date>2021-09-10</date>
+        </car_service>
+        <car_service id = "2">
+            <car_id>2</car_id>
+            <service_id>3</service_id>
+            <price>2000.00</price>
+            <date>2021-10-10</date>
+        </car_service>
+        <car_service id = "3">
+            <car_id>3</car_id>
+            <service_id>1</service_id>
+            <price>3000.00</price>
+            <date>2021-12-10</date>
+        </car_service>
+    </car_services>
+    <categories>
+        <category id = "A">
+            <name>mini cars</name>
+            <description>Smaller than 370 cm in length. Vehicle body is small, head and knee distance is not much. Not suitable for long trips. They are small in size and lightweight. Therefore, their ability to adapt to difficult conditions is often very low.</description>
+            <coefficient>1.20</coefficient>
+        </category>
+        <category id = "B">
+            <name>small cars</name>
+            <description>Sizes range from 370 cm to 400 cm. Technically, they are stronger than segment A. There are heavier body structures. Just like the A segment, the bodywork options are numerous.</description>
+            <coefficient>1.30</coefficient>
+        </category>
+    </categories>
+    <technical_inspections>
+        <technical_inspection id = "1">
+            <car_id>1</car_id>
+            <date>2022-05-05</date>
+            <organization>SGS Poland Sp. z o.o.</organization>>
+        </technical_inspection>
+        <technical_inspection id = "2">
+            <car_id>2</car_id>
+            <date>2022-05-06</date>
+            <organization>SGS Poland Sp. z o.o.</organization>>
+        </technical_inspection>
+        <technical_inspection id = "3">
+            <car_id>3</car_id>
+            <date>2020-05-07</date>
+            <organization>SGS Poland Sp. z o.o.</organization>>
+        </technical_inspection>
+    </technical_inspections>
+</rentalCompany>
