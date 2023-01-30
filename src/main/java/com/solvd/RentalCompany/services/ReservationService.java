@@ -35,20 +35,7 @@ public class ReservationService implements IReservationService{
         Car car = carMapper.coreToModel(carCore);
         Employee employee = employeeMapper.coreToModel(employeeCore);
         InsuranceType insuranceType = insuranceTypeMapper.coreToModel(insuranceTypeCore);
-        Reservation reservation = new Reservation();
-        Optional<Client> optionalClient = clientDAO.getEntityById(client.getId());
-        if(optionalClient.isEmpty()){
-            Client savedClient = clientDAO.createEntity(client);
-            logger.info("Object of class Client has been successfully created.");
-        }else{
-            reservation.setClientId(optionalClient.get().getId());
-        }
-        reservation.setCarId(car.getId());
-        reservation.setEmployeeId(employee.getId());
-        reservation.setInsuranceId(insuranceType.getId());
-        reservation.setFromDate(dateFrom);
-        reservation.setToDate(dateTo);
-        reservation.setPrice(0.00);
+        Reservation reservation = new Reservation(client, car, employee, insuranceType, dateFrom, dateTo);
         Reservation savedReservation = this.reservationDAO.createEntity(reservation);
         logger.info("Object of class Reservation has been successfully created.");
         ReservationCore reservationCore = reservationMapper.modelToCore(reservation);
@@ -60,20 +47,7 @@ public class ReservationService implements IReservationService{
         Car car = carMapper.coreToModel(carCore);
         Employee employee = employeeMapper.coreToModel(employeeCore);
         InsuranceType insuranceType = insuranceTypeMapper.coreToModel(insuranceTypeCore);
-        Reservation reservation = new Reservation();
-        Optional<Client> optionalClient = clientDAO.getEntityById(client.getId());
-        if(optionalClient.isEmpty()){
-            Client savedClient = clientDAO.createEntity(client);
-            logger.info("Object of class Client has been successfully created.");
-        }else{
-            reservation.setClientId(optionalClient.get().getId());
-        }
-        reservation.setCarId(car.getId());
-        reservation.setEmployeeId(employee.getId());
-        reservation.setInsuranceId(insuranceType.getId());
-        reservation.setFromDate(LocalDate.now());
-        reservation.setToDate(dateTo);
-        reservation.setPrice(0.00);
+        Reservation reservation = new Reservation(client, car, employee, insuranceType, dateTo);
         Reservation savedReservation = this.reservationDAO.createEntity(reservation);
         logger.info("Object of class Reservation has been successfully created.");
         ReservationCore reservationCore = reservationMapper.modelToCore(reservation);
@@ -84,20 +58,7 @@ public class ReservationService implements IReservationService{
         Car car = carMapper.coreToModel(carCore);
         Employee employee = employeeMapper.coreToModel(employeeCore);
         InsuranceType insuranceType = insuranceTypeMapper.coreToModel(insuranceTypeCore);
-        Reservation reservation = new Reservation();
-        Optional<Client> optionalClient = clientDAO.getEntityById(client.getId());
-        if(optionalClient.isEmpty()){
-            Client savedClient = clientDAO.createEntity(client);
-            logger.info("Object of class Client has been successfully created.");
-        }else{
-            reservation.setClientId(optionalClient.get().getId());
-        }
-        reservation.setCarId(car.getId());
-        reservation.setEmployeeId(employee.getId());
-        reservation.setInsuranceId(insuranceType.getId());
-        reservation.setFromDate(LocalDate.now());
-        reservation.setToDate(null);
-        reservation.setPrice(0.00);
+        Reservation reservation = new Reservation(client, car, employee, insuranceType);
         Reservation savedReservation = this.reservationDAO.createEntity(reservation);
         logger.info("Object of class Reservation has been successfully created.");
         ReservationCore reservationCore = reservationMapper.modelToCore(reservation);

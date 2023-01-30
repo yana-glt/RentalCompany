@@ -29,7 +29,7 @@ public class ReservationDAO extends MySQLDAO implements IReservationDAO{
             if(reservation.getPrice() != null){preparedStatement.setDouble(7, reservation.getPrice());}
             else{preparedStatement.setDouble(7, 0.00);}
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        }catch (SQLException e) {
             logger.error("Database error", e.getMessage(), e.getErrorCode());
         }
         return reservation;

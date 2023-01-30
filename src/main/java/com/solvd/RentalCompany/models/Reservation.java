@@ -43,6 +43,32 @@ public class Reservation {
         this.insuranceId = insuranceId;
         this.fromDate = fromDate;
     }
+    public Reservation(Client client, Car car, Employee employee, InsuranceType insuranceType, LocalDate fromDate, LocalDate toDate){
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = insuranceType.getId();
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.price = 0.00;
+    }
+    public Reservation(Client client, Car car, Employee employee, InsuranceType insuranceType, LocalDate toDate){
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = insuranceType.getId();
+        this.fromDate = LocalDate.now();
+        this.toDate = toDate;
+        this.price = 0.00;
+    }
+    public Reservation(Client client, Car car, Employee employee, InsuranceType insuranceType){
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = insuranceType.getId();
+        this.fromDate = LocalDate.now();
+        this.price = 0.00;
+    }
 
     public Integer getId() {
         return id;
