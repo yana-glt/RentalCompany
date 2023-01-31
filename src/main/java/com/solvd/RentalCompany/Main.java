@@ -192,6 +192,8 @@ public class Main {
 //                new InsuranceType(1, "A", 30.00, 6.00),
 //                LocalDate.now()));
 
+        boolean result = DomParser.validateXmlSchema("rentalCompany.xsd", "rentalCompany.xml");
+        System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
         DomParser.parse();
     }
 }
