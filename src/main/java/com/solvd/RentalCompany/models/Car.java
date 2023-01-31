@@ -1,5 +1,6 @@
 package com.solvd.RentalCompany.models;
 
+import java.time.Year;
 import java.util.Objects;
 
 public class Car {
@@ -9,13 +10,13 @@ public class Car {
     private String brand;
     private String model;
     private String number;
-    private String year;
+    private Year year;
     private Double dayPrice;
 
     public Car() {
     }
 
-    public Car(Integer id, String vin, String categoryId, String brand, String model, String number, String year, Double dayPrice) {
+    public Car(Integer id, String vin, String categoryId, String brand, String model, String number, Year year, Double dayPrice) {
         this.id = id;
         this.vin = vin;
         this.categoryId = categoryId;
@@ -74,11 +75,11 @@ public class Car {
         this.number = number;
     }
 
-    public String getYear() {
+    public Year getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(Year year) {
         this.year = year;
     }
 

@@ -8,6 +8,12 @@ public class InsuranceType {
     private Double mandatoryPrice;
     private Double additionalPrice;
 
+    public InsuranceType(String categoryId, Double mandatoryPrice, Double additionalPrice) {
+        this.categoryId = categoryId;
+        this.mandatoryPrice = mandatoryPrice;
+        this.additionalPrice = additionalPrice;
+    }
+
     public InsuranceType() {
     }
 

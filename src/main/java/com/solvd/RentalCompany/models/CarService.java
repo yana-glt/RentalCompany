@@ -1,22 +1,23 @@
 package com.solvd.RentalCompany.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
 public class CarService {
     private Integer id;
     private Integer carId;
-    private Integer serviceCompanyId;
+    private Integer serviceId;
     private Double price;
-    private Date date;
+    private LocalDate date;
 
     public CarService() {
     }
 
-    public CarService(Integer id, Integer carId, Integer serviceCompanyId, Double price, Date date) {
+    public CarService(Integer id, Integer carId, Integer serviceId, Double price, LocalDate date) {
         this.id = id;
         this.carId = carId;
-        this.serviceCompanyId = serviceCompanyId;
+        this.serviceId = serviceId;
         this.price = price;
         this.date = date;
     }
@@ -37,12 +38,12 @@ public class CarService {
         this.carId = carId;
     }
 
-    public Integer getServiceCompanyId() {
-        return serviceCompanyId;
+    public Integer getServiceId() {
+        return serviceId;
     }
 
-    public void setServiceCompanyId(Integer serviceCompanyId) {
-        this.serviceCompanyId = serviceCompanyId;
+    public void setServiceId(Integer serviceId) {
+        this.serviceId = serviceId;
     }
 
     public Double getPrice() {
@@ -53,11 +54,11 @@ public class CarService {
         this.price = price;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -68,14 +69,14 @@ public class CarService {
         CarService that = (CarService) o;
         return Objects.equals(id, that.id)
                 && Objects.equals(carId, that.carId)
-                && Objects.equals(serviceCompanyId, that.serviceCompanyId)
+                && Objects.equals(serviceId, that.serviceId)
                 && Objects.equals(price, that.price)
                 && Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, carId, serviceCompanyId, price, date);
+        return Objects.hash(id, carId, serviceId, price, date);
     }
 
     @Override
@@ -83,7 +84,7 @@ public class CarService {
         return "CarService{" +
                 "id=" + id +
                 ", carId=" + carId +
-                ", serviceCompanyId=" + serviceCompanyId +
+                ", serviceId=" + serviceId +
                 ", price=" + price +
                 ", date=" + date +
                 '}';

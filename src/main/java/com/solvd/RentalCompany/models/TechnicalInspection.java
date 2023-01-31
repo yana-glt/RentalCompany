@@ -1,18 +1,18 @@
 package com.solvd.RentalCompany.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class TechnicalInspection {
     private Integer id;
     private Integer carId;
-    private Date date;
+    private LocalDate date;
     private String organization;
 
     public TechnicalInspection() {
     }
 
-    public TechnicalInspection(Integer id, Integer carId, Date date, String organization) {
+    public TechnicalInspection(Integer id, Integer carId, LocalDate date, String organization) {
         this.id = id;
         this.carId = carId;
         this.date = date;
@@ -35,11 +35,11 @@ public class TechnicalInspection {
         this.carId = carId;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

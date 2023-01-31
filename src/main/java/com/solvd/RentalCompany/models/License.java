@@ -1,20 +1,21 @@
 package com.solvd.RentalCompany.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class License {
     private Integer id;
     private Integer clientId;
     private String number;
-    private Date issueDate;
-    private Date expiryDate;
+    private LocalDate issueDate;
+    private LocalDate expiryDate;
+
     private Boolean isValid;
 
     public License() {
     }
 
-    public License(Integer id, Integer clientId, String number, Date issueDate, Date expiryDate, Boolean isValid) {
+    public License(Integer id, Integer clientId, String number, LocalDate issueDate, LocalDate expiryDate, Boolean isValid) {
         this.id = id;
         this.clientId = clientId;
         this.number = number;
@@ -47,19 +48,19 @@ public class License {
         this.number = number;
     }
 
-    public Date getIssueDate() {
+    public LocalDate getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
 
-    public Date getExpiryDate() {
+    public LocalDate getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(Date expiryDate) {
+    public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
 

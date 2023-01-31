@@ -1,6 +1,6 @@
 package com.solvd.RentalCompany.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Reservation {
@@ -9,14 +9,14 @@ public class Reservation {
     private Integer employeeId;
     private Integer carId;
     private Integer insuranceId;
-    private Date fromDate;
-    private Date toDate;
+    private LocalDate fromDate;
+    private LocalDate toDate;
     private Double price;
 
     public Reservation() {
     }
 
-    public Reservation(Integer id, Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, Date fromDate, Date toDate, Double price) {
+    public Reservation(Integer id, Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate, LocalDate toDate, Double price) {
         this.id = id;
         this.clientId = clientId;
         this.employeeId = employeeId;
@@ -25,6 +25,49 @@ public class Reservation {
         this.fromDate = fromDate;
         this.toDate = toDate;
         this.price = price;
+    }
+
+    public Reservation(Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate, LocalDate toDate) {
+        this.clientId = clientId;
+        this.employeeId = employeeId;
+        this.carId = carId;
+        this.insuranceId = insuranceId;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+    }
+
+    public Reservation(Integer clientId, Integer employeeId, Integer carId, Integer insuranceId, LocalDate fromDate) {
+        this.clientId = clientId;
+        this.employeeId = employeeId;
+        this.carId = carId;
+        this.insuranceId = insuranceId;
+        this.fromDate = fromDate;
+    }
+    public Reservation(Client client, Car car, Employee employee, InsuranceType insuranceType, LocalDate fromDate, LocalDate toDate){
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = insuranceType.getId();
+        this.fromDate = fromDate;
+        this.toDate = toDate;
+        this.price = 0.00;
+    }
+    public Reservation(Client client, Car car, Employee employee, InsuranceType insuranceType, LocalDate toDate){
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = insuranceType.getId();
+        this.fromDate = LocalDate.now();
+        this.toDate = toDate;
+        this.price = 0.00;
+    }
+    public Reservation(Client client, Car car, Employee employee, InsuranceType insuranceType){
+        this.clientId = client.getId();
+        this.employeeId = employee.getId();
+        this.carId = car.getId();
+        this.insuranceId = insuranceType.getId();
+        this.fromDate = LocalDate.now();
+        this.price = 0.00;
     }
 
     public Integer getId() {
@@ -67,19 +110,19 @@ public class Reservation {
         this.insuranceId = insuranceId;
     }
 
-    public Date getFromDate() {
+    public LocalDate getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(Date fromDate) {
+    public void setFromDate(LocalDate fromDate) {
         this.fromDate = fromDate;
     }
 
-    public Date getToDate() {
+    public LocalDate getToDate() {
         return toDate;
     }
 
-    public void setToDate(Date toDate) {
+    public void setToDate(LocalDate toDate) {
         this.toDate = toDate;
     }
 
