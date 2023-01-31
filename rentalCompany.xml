@@ -2,31 +2,31 @@
 <rentalCompany>
     <cars>
         <car id = "1">
-            <vin>XLM8592KM00152L56</vin>>
+            <vin>XLM8592KM00152L56</vin>
             <category_id>A</category_id>
-            <brand>Kia</brand>>
+            <brand>Kia</brand>
             <model>Picanto</model>
-            <number>RJA4198</number>>
+            <number>RJA4198</number>
             <year>2020</year>>
-            <day_price>100.00</day_price>>
+            <day_price>100.00</day_price>
         </car>
         <car id = "2">
-            <vin>PKT001KW945444878</vin>>
+            <vin>PKT001KW945444878</vin>
             <category_id>A</category_id>
-            <brand>Fiat</brand>>
+            <brand>Fiat</brand>
             <model>500</model>
-            <number>PLO7003</number>>
-            <year>2019</year>>
-            <day_price>115.00</day_price>>
+            <number>PLO7003</number>
+            <year>2019</year>
+            <day_price>115.00</day_price>
         </car>
         <car id = "3">
-            <vin>LTY9003HY8521P961</vin>>
+            <vin>LTY9003HY8521P961</vin>
             <category_id>B</category_id>
-            <brand>Volkswagen</brand>>
+            <brand>Volkswagen</brand>
             <model>Polo</model>
-            <number>XP57982</number>>
+            <number>XP57982</number>
             <year>2019</year>>
-            <day_price>130.00</day_price>>
+            <day_price>130.00</day_price>
         </car>
     </cars>
     <services>
@@ -34,19 +34,19 @@
             <name>Robert Bosch Sp.z o.o.</name>
             <address>Jutrzenki 45 02-231 Warszawa</address>
             <phone>+48227854343</phone>
-            <country>Poland</country>>
+            <country>Poland</country>
         </service>
         <service id = "2">
             <name>VAT services</name>
             <address>Jose Abascal 57 28003 Madrid</address>
             <phone>+34917596517</phone>
-            <country>Spain</country>>
+            <country>Spain</country>
         </service>
         <service id = "3">
             <name>DKV Euro Service France</name>
             <address>13 - 17 rue Pages 92150 Suresnes</address>
             <phone>+33140990167</phone>
-            <country>France</country>>
+            <country>France</country>
         </service>
     </services>
     <car_services>
@@ -85,17 +85,17 @@
         <technical_inspection id = "1">
             <car_id>1</car_id>
             <date>2022-05-05</date>
-            <organization>SGS Poland Sp. z o.o.</organization>>
+            <organization>SGS Poland Sp. z o.o.</organization>
         </technical_inspection>
         <technical_inspection id = "2">
             <car_id>2</car_id>
             <date>2022-05-06</date>
-            <organization>SGS Poland Sp. z o.o.</organization>>
+            <organization>SGS Poland Sp. z o.o.</organization>
         </technical_inspection>
         <technical_inspection id = "3">
             <car_id>3</car_id>
             <date>2020-05-07</date>
-            <organization>SGS Poland Sp. z o.o.</organization>>
+            <organization>SGS Poland Sp. z o.o.</organization>
         </technical_inspection>
     </technical_inspections>
 </rentalCompany>
