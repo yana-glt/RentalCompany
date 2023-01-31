@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="rentalCompany" type="rentalCompanyType"/>
+  <xs:complexType name="carType" mixed="true">
+    <xs:sequence>
+      <xs:element type="xs:string" name="vin"/>
+      <xs:element type="xs:string" name="category_id"/>
+      <xs:element type="xs:string" name="brand"/>
+      <xs:element type="xs:string" name="model"/>
+      <xs:element type="xs:string" name="number"/>
+      <xs:element type="xs:gYear" name="year"/>
+      <xs:element type="xs:double" name="day_price"/>
+    </xs:sequence>
+    <xs:attribute type="xs:integer" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="carsType">
+    <xs:sequence>
+      <xs:element type="carType" name="car"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="address"/>
+      <xs:element type="xs:string" name="phone"/>
+      <xs:element type="xs:string" name="country"/>
+    </xs:sequence>
+    <xs:attribute type="xs:integer" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="servicesType">
+    <xs:sequence>
+      <xs:element type="serviceType" name="service"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="car_serviceType">
+    <xs:sequence>
+      <xs:element type="xs:integer" name="car_id"/>
+      <xs:element type="xs:integer" name="service_id"/>
+      <xs:element type="xs:double" name="price"/>
+      <xs:element type="xs:date" name="date"/>
+    </xs:sequence>
+    <xs:attribute type="xs:integer" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="car_servicesType">
+    <xs:sequence>
+      <xs:element type="car_serviceType" name="car_service"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="categoryType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="description"/>
+      <xs:element type="xs:double" name="coefficient"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="categoriesType">
+    <xs:sequence>
+      <xs:element type="categoryType" name="category"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="technical_inspectionType">
+    <xs:sequence>
+      <xs:element type="xs:integer" name="car_id"/>
+      <xs:element type="xs:date" name="date"/>
+      <xs:element type="xs:string" name="organization"/>
+    </xs:sequence>
+    <xs:attribute type="xs:integer" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="technical_inspectionsType">
+    <xs:sequence>
+      <xs:element type="technical_inspectionType" name="technical_inspection"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rentalCompanyType">
+    <xs:sequence>
+      <xs:element type="carsType" name="cars"/>
+      <xs:element type="servicesType" name="services"/>
+      <xs:element type="car_servicesType" name="car_services"/>
+      <xs:element type="categoriesType" name="categories"/>
+      <xs:element type="technical_inspectionsType" name="technical_inspections"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

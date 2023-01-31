@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rentalCompany>
+<rentalCompany xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="rentalCompany.xsd">
     <cars>
         <car id = "1">
             <vin>XLM8592KM00152L56</vin>
