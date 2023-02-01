@@ -2,6 +2,8 @@ package com.solvd.RentalCompany.jaxb;
 
 import com.solvd.RentalCompany.models.CarService;
 import com.solvd.RentalCompany.models.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -10,6 +12,7 @@ import java.io.FileOutputStream;
 import java.time.LocalDate;
 
 public class JaxbWriter {
+    private final static Logger logger = LogManager.getLogger(JaxbWriter.class);
     public static void write(){
         try {
             JAXBContext context = JAXBContext.newInstance(RentalCompany.class);
@@ -33,9 +36,9 @@ public class JaxbWriter {
             };
             m.marshal(rentalCompany, new FileOutputStream("C:/Users/Alexa/java projects/RentalCompany/src/main/java/com/solvd/RentalCompany/jaxb/company.xml"));
         } catch (JAXBException e) {
-            e.printStackTrace();
+            logger.error(String.format("Unmarshaller error"), e.getMessage());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error(String.format("Failed to read information from the specified file"), e.getMessage());
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.solvd.RentalCompany.jaxb;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -7,6 +9,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class JaxbReader {
+
+    private final static Logger logger = LogManager.getLogger(JaxbReader.class);
 
     public static void read(){
         try {
@@ -16,9 +20,9 @@ public class JaxbReader {
             RentalCompany rentalCompany = (RentalCompany)unmarshaller.unmarshal(reader);
             System.out.println(rentalCompany);
         } catch (JAXBException e) {
-            e.printStackTrace();
+            logger.error(String.format("Unmarshaller error"), e.getMessage());
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error(String.format("Failed to read information from the specified file"), e.getMessage());
         }
     }
 }
