@@ -1,12 +1,20 @@
 package com.solvd.RentalCompany.models;
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
-
+@XmlRootElement(name="service")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "service", propOrder = {"id","name", "address", "phone", "country"})
 public class Service {
+    @XmlAttribute(required = true)
     private Integer id;
+    @XmlElement
     private String name;
+    @XmlElement
     private String address;
+    @XmlElement
     private String phone;
+    @XmlElement
     private String country;
 
     public Service() {
