@@ -13,6 +13,9 @@ public class RentalCompany {
     @XmlElementWrapper(name="car_services")
     @XmlElement(name="car_service")
     private ArrayList<CarService> carServices = new ArrayList<>();
+    @XmlElementWrapper(name="cars")
+    @XmlElement(name="car")
+    private ArrayList<Car> cars = new ArrayList<>();
 
     public RentalCompany() {
     }
@@ -25,12 +28,19 @@ public class RentalCompany {
         this.carServices = carServices;
     }
 
+    public void setCars(ArrayList<Car> cars) {
+        this.cars = cars;
+    }
+
     public ArrayList<Service> getServices() {
         return services;
     }
 
     public ArrayList<CarService> getCarServices() {
         return carServices;
+    }
+    public ArrayList<Car> getCars() {
+        return cars;
     }
 
     public boolean addService(Service service){
@@ -41,11 +51,17 @@ public class RentalCompany {
         return carServices.add(carService);
     }
 
+    public boolean addCar(Car car){
+        return cars.add(car);
+    }
+
+
     @Override
     public String toString() {
         return "RentalCompany{" +
-                "serviceList=" + services +
-                ", carServiceList=" + carServices +
+                "services=" + services +
+                ", carServices=" + carServices +
+                ", cars=" + cars +
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.solvd.RentalCompany.jaxb;
 
+import com.solvd.RentalCompany.models.Car;
 import com.solvd.RentalCompany.models.CarService;
 import com.solvd.RentalCompany.models.Service;
 import org.apache.logging.log4j.LogManager;
@@ -10,6 +11,7 @@ import javax.xml.bind.Marshaller;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.time.LocalDate;
+import java.time.Year;
 
 public class JaxbWriter {
     private final static Logger logger = LogManager.getLogger(JaxbWriter.class);
@@ -32,6 +34,13 @@ public class JaxbWriter {
                     this.addCarService(carService);
                     carService = new CarService(6,3,6,3000.00, LocalDate.of(2022, 12, 15));
                     this.addCarService(carService);
+
+                    Car car = new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00);
+                    this.addCar(car);
+                    car = new Car(2, "PKT001KW945444878", "A", "Fiat", "500", "PLO7003", Year.of(2019), 115.00);
+                    this.addCar(car);
+                    car = new Car(3, "LTY9003HY8521P961", "B", "VolksWagen", "Polo", "PLO7003", Year.of(2019), 130.00);
+                    this.addCar(car);
                 }
             };
             m.marshal(rentalCompany, new FileOutputStream("C:/Users/Alexa/java projects/RentalCompany/src/main/java/com/solvd/RentalCompany/jaxb/company.xml"));

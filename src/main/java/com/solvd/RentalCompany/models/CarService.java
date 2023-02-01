@@ -16,7 +16,7 @@ public class CarService {
     private Integer carId;
     @XmlElement(name="service_id")
     private Integer serviceId;
-    @XmlElement
+    @XmlElement(name="price")
     private Double price;
     @XmlJavaTypeAdapter(type=LocalDate.class, value=LocalDateAdapter.class)
     @XmlElement

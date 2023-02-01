@@ -1,16 +1,31 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.jaxb.YearAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.Year;
 import java.util.Objects;
-
+@XmlRootElement(name="car")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "car", propOrder = {"id", "vin", "categoryId", "brand", "model", "number", "year", "dayPrice"})
 public class Car {
+    @XmlAttribute(required = true)
     private Integer id;
+    @XmlElement(name="vin")
     private String vin;
+    @XmlElement(name="category-id")
     private String categoryId;
+    @XmlElement(name="brand")
     private String brand;
+    @XmlElement(name="model")
     private String model;
+    @XmlElement(name="number")
     private String number;
+    @XmlJavaTypeAdapter(type=Year.class, value= YearAdapter.class)
+    @XmlElement(name="year")
     private Year year;
+    @XmlElement(name="dayPrice")
     private Double dayPrice;
 
     public Car() {
