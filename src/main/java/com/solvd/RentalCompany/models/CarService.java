@@ -1,14 +1,25 @@
 package com.solvd.RentalCompany.models;
 
-import java.time.LocalDate;
-import java.util.Date;
-import java.util.Objects;
+import com.solvd.RentalCompany.jaxb.LocalDateAdapter;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
+import java.util.Objects;
+@XmlRootElement(name="car_service")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "car_service", propOrder = {"id", "carId", "serviceId", "price", "date"})
 public class CarService {
+    @XmlAttribute(required = true)
     private Integer id;
+    @XmlElement(name="car_id")
     private Integer carId;
+    @XmlElement(name="service_id")
     private Integer serviceId;
+    @XmlElement(name="price")
     private Double price;
+    @XmlJavaTypeAdapter(type=LocalDate.class, value=LocalDateAdapter.class)
+    @XmlElement
     private LocalDate date;
 
     public CarService() {

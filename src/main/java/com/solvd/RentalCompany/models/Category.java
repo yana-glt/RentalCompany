@@ -1,11 +1,18 @@
 package com.solvd.RentalCompany.models;
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
-
+@XmlRootElement(name="category")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "category", propOrder = {"id", "name", "description", "coefficient"})
 public class Category {
+    @XmlAttribute(required = true)
     private String id;
+    @XmlElement(name="name")
     private String name;
+    @XmlElement(name="description")
     private String description;
+    @XmlElement(name="coefficient")
     private Double coefficient;
 
     public Category() {

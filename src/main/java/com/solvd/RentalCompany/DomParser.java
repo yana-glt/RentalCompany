@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DomParser {
-    private final static Logger logger = LogManager.getLogger(DomParser.class);
+   private final static Logger logger = LogManager.getLogger(DomParser.class);
 
     public static boolean validateXmlSchema(String xsdFile, String xmlFile){
         try{

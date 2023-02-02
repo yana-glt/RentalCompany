@@ -1,12 +1,23 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.jaxb.LocalDateAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.util.Objects;
-
+@XmlRootElement(name="technical_inspection")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "technical_inspection", propOrder = {"id", "carId", "date", "organization"})
 public class TechnicalInspection {
+    @XmlAttribute(required = true)
     private Integer id;
+    @XmlElement(name="car_id")
     private Integer carId;
+    @XmlJavaTypeAdapter(type=LocalDate.class, value= LocalDateAdapter.class)
+    @XmlElement
     private LocalDate date;
+    @XmlElement(name="organization")
     private String organization;
 
     public TechnicalInspection() {

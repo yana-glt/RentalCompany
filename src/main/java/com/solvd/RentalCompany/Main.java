@@ -1,5 +1,7 @@
 package com.solvd.RentalCompany;
 
+import com.solvd.RentalCompany.jaxb.JaxbReader;
+import com.solvd.RentalCompany.jaxb.JaxbWriter;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 import java.time.LocalDate;
@@ -192,8 +194,11 @@ public class Main {
 //                new InsuranceType(1, "A", 30.00, 6.00),
 //                LocalDate.now()));
 
-        boolean result = DomParser.validateXmlSchema("rentalCompany.xsd", "rentalCompany.xml");
-        System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
-        DomParser.parse();
+//        boolean result = DomParser.validateXmlSchema("rentalCompany.xsd", "rentalCompany.xml");
+//        System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
+//        DomParser.parse();
+
+        JaxbWriter.write();
+        JaxbReader.read();
     }
 }
