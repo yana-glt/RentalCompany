@@ -1,8 +1,6 @@
 package com.solvd.RentalCompany.jaxb;
 
-import com.solvd.RentalCompany.models.Car;
-import com.solvd.RentalCompany.models.CarService;
-import com.solvd.RentalCompany.models.Service;
+import com.solvd.RentalCompany.models.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.xml.bind.JAXBContext;
@@ -41,11 +39,24 @@ public class JaxbWriter {
                     this.addCar(car);
                     car = new Car(3, "LTY9003HY8521P961", "B", "VolksWagen", "Polo", "PLO7003", Year.of(2019), 130.00);
                     this.addCar(car);
+
+                    Category category = new Category("A", "mini cars", "Smaller than 370 cm in length.",1.20);
+                    this.addCategory(category);
+                    category = new Category("B", "small cars","Sizes range from 370 cm to 400 cm. ", 1.30);
+                    this.addCategory(category);
+
+                    TechnicalInspection technicalInspection = new TechnicalInspection(1,1, LocalDate.of(2022,11,05), "SGS Poland Sp. z o.o.");
+                    this.addTechnicalInspection(technicalInspection);
+                    technicalInspection = new TechnicalInspection(2,2, LocalDate.of(2022, 10, 10), "SGS Poland Sp. z o.o.");
+                    this.addTechnicalInspection(technicalInspection);
+                    technicalInspection = new TechnicalInspection(3,3, LocalDate.of(2022, 12, 15), "SGS Poland Sp. z o.o.");
+                    this.addTechnicalInspection(technicalInspection);
                 }
             };
             m.marshal(rentalCompany, new FileOutputStream("C:/Users/Alexa/java projects/RentalCompany/src/main/java/com/solvd/RentalCompany/jaxb/company.xml"));
         } catch (JAXBException e) {
             logger.error(String.format("Unmarshaller error"), e.getMessage());
+            e.printStackTrace();
         } catch (FileNotFoundException e) {
             logger.error(String.format("Failed to read information from the specified file"), e.getMessage());
         }

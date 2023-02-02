@@ -198,7 +198,7 @@ public class Main {
 //        System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
 //        DomParser.parse();
 
-//        JaxbWriter.write();
+        JaxbWriter.write();
         JaxbReader.read();
     }
 }

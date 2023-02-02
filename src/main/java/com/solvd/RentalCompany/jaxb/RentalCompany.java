@@ -16,6 +16,12 @@ public class RentalCompany {
     @XmlElementWrapper(name="cars")
     @XmlElement(name="car")
     private ArrayList<Car> cars = new ArrayList<>();
+    @XmlElementWrapper(name="categories")
+    @XmlElement(name="category")
+    private ArrayList<Category> categories = new ArrayList<>();
+    @XmlElementWrapper(name="technical_inspections")
+    @XmlElement(name="technical_inspection")
+    private ArrayList<TechnicalInspection> technicalInspections = new ArrayList<>();
 
     public RentalCompany() {
     }
@@ -32,6 +38,14 @@ public class RentalCompany {
         this.cars = cars;
     }
 
+    public void setCategories(ArrayList<Category> categories) {
+        this.categories = categories;
+    }
+
+    public void setTechnicalInspections(ArrayList<TechnicalInspection> technicalInspections) {
+        this.technicalInspections = technicalInspections;
+    }
+
     public ArrayList<Service> getServices() {
         return services;
     }
@@ -41,6 +55,14 @@ public class RentalCompany {
     }
     public ArrayList<Car> getCars() {
         return cars;
+    }
+
+    public ArrayList<Category> getCategories() {
+        return categories;
+    }
+
+    public ArrayList<TechnicalInspection> getTechnicalInspections() {
+        return technicalInspections;
     }
 
     public boolean addService(Service service){
@@ -55,6 +77,14 @@ public class RentalCompany {
         return cars.add(car);
     }
 
+    public boolean addCategory(Category category){
+        return categories.add(category);
+    }
+
+    public boolean addTechnicalInspection(TechnicalInspection technicalInspection){
+        return technicalInspections.add(technicalInspection);
+    }
+
 
     @Override
     public String toString() {
@@ -62,6 +92,8 @@ public class RentalCompany {
                 "services=" + services +
                 ", carServices=" + carServices +
                 ", cars=" + cars +
+                ", categories=" + categories +
+                ", technicalInspections=" + technicalInspections +
                 '}';
     }
 }
