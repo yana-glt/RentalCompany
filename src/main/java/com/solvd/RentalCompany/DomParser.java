@@ -8,7 +8,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,8 +22,10 @@ import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DomParser {
+public class DomParser{
     private final static Logger logger = LogManager.getLogger(DomParser.class);
+
+    public static Document doc = null;
 
     public static boolean validateXmlSchema(String xsdFile, String xmlFile){
         try{
@@ -43,7 +44,7 @@ public class DomParser {
     }
 
     public static void parse(){
-        Document doc = buildDocument();
+        doc = buildDocument();
         Node root = doc.getFirstChild();
         NodeList rootChilds = root.getChildNodes();
         Node carsNode = null;
@@ -369,5 +370,90 @@ public class DomParser {
             System.out.println(ti);
         }
         return technicalInspections;
+    }
+
+    public static List<ISavedInXmlFile> getElementsByTagName(String tagName){
+        List<ISavedInXmlFile>list = new ArrayList<>();
+        NodeList nodeList = doc.getElementsByTagName(tagName);
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            Node nNode = nodeList.item(temp);
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) nNode;
+                switch(tagName){
+                    case "car":
+                        Car car = new Car();
+                        car.setId(Integer.valueOf(eElement.getAttribute("id")));
+                        car.setVin(eElement.getElementsByTagName("vin")
+                                .item(0).getTextContent());
+                        car.setCategoryId(eElement.getElementsByTagName("category_id")
+                                .item(0).getTextContent());
+                        car.setBrand(eElement.getElementsByTagName("brand")
+                                .item(0).getTextContent());
+                        car.setModel(eElement.getElementsByTagName("model")
+                                .item(0).getTextContent());
+                        car.setNumber(eElement.getElementsByTagName("number")
+                                .item(0).getTextContent());
+                        car.setYear(Year.parse(eElement.getElementsByTagName("year")
+                                .item(0).getTextContent()));
+                        car.setDayPrice(Double.valueOf(eElement.getElementsByTagName("day_price")
+                                .item(0).getTextContent()));
+                        ISavedInXmlFile c = car;
+                        list.add(c);
+                        break;
+                    case "service":
+                        Service service = new Service();
+                        service.setId(Integer.valueOf(eElement.getAttribute("id")));
+                        service.setName(eElement.getElementsByTagName("name")
+                                .item(0).getTextContent());
+                        service.setAddress(eElement.getElementsByTagName("address")
+                                .item(0).getTextContent());
+                        service.setPhone(eElement.getElementsByTagName("phone")
+                                .item(0).getTextContent());
+                        service.setCountry(eElement.getElementsByTagName("country")
+                                .item(0).getTextContent());
+                        ISavedInXmlFile s = service;
+                        list.add(s);
+                        break;
+                    case "car_service":
+                        CarService carService = new CarService();
+                        carService.setId(Integer.valueOf(eElement.getAttribute("id")));
+                        carService.setCarId(Integer.valueOf(eElement.getElementsByTagName("car_id")
+                                .item(0).getTextContent()));
+                        carService.setServiceId(Integer.valueOf(eElement.getElementsByTagName("service_id")
+                                .item(0).getTextContent()));
+                        carService.setPrice(Double.valueOf(eElement.getElementsByTagName("price")
+                                .item(0).getTextContent()));
+                        carService.setDate(LocalDate.parse(eElement.getElementsByTagName("date")
+                                .item(0).getTextContent()));
+                        ISavedInXmlFile cs = carService;
+                        list.add(cs);
+                        break;
+                    case "category":
+                        Category category = new Category();
+                        category.setId(eElement.getAttribute("id"));
+                        category.setName(eElement.getElementsByTagName("name").item(0).getTextContent());
+                        category.setDescription(eElement.getElementsByTagName("description").item(0).getTextContent());
+                        category.setCoefficient(Double.valueOf(eElement.getElementsByTagName("coefficient")
+                                .item(0).getTextContent()));
+                        ISavedInXmlFile cat = category;
+                        list.add(cat);
+                        break;
+                    case "technical_inspection":
+                        TechnicalInspection technicalInspection = new TechnicalInspection();
+                        technicalInspection.setId(Integer.valueOf(eElement.getAttribute("id")));
+                        technicalInspection.setCarId(Integer.valueOf(eElement.getElementsByTagName("car_id")
+                                .item(0).getTextContent()));
+                        technicalInspection.setDate(LocalDate.parse(eElement.getElementsByTagName("date")
+                                .item(0).getTextContent()));
+                        technicalInspection.setOrganization(eElement.getElementsByTagName("organization")
+                                .item(0).getTextContent());
+
+                        ISavedInXmlFile t = technicalInspection;
+                        list.add(t);
+                        break;
+                }
+            }
+        }
+        return list;
     }
 }

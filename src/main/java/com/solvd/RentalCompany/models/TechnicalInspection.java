@@ -1,9 +1,11 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.ISavedInXmlFile;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class TechnicalInspection {
+public class TechnicalInspection implements ISavedInXmlFile {
     private Integer id;
     private Integer carId;
     private LocalDate date;

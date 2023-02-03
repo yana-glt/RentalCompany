@@ -1,9 +1,11 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.ISavedInXmlFile;
+
 import java.time.Year;
 import java.util.Objects;
 
-public class Car {
+public class Car implements ISavedInXmlFile {
     private Integer id;
     private String vin;
     private String categoryId;

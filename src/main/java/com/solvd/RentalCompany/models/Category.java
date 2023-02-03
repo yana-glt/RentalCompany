@@ -1,8 +1,10 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.ISavedInXmlFile;
+
 import java.util.Objects;
 
-public class Category {
+public class Category implements ISavedInXmlFile {
     private String id;
     private String name;
     private String description;

@@ -1,9 +1,10 @@
 package com.solvd.RentalCompany;
 
-import com.solvd.RentalCompany.models.*;
+import com.solvd.RentalCompany.models.Service;
 import com.solvd.RentalCompany.services.*;
-import java.time.LocalDate;
-import java.time.Year;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -195,5 +196,8 @@ public class Main {
         boolean result = DomParser.validateXmlSchema("rentalCompany.xsd", "rentalCompany.xml");
         System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
         DomParser.parse();
+        List<ISavedInXmlFile> list = new ArrayList<>();
+        list = DomParser.getElementsByTagName("category");
+        System.out.println(list);
     }
 }
