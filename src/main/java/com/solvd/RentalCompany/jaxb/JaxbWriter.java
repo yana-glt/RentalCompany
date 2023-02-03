@@ -53,7 +53,7 @@ public class JaxbWriter {
                     this.addTechnicalInspection(technicalInspection);
                 }
             };
-            m.marshal(rentalCompany, new FileOutputStream("C:/Users/Alexa/java projects/RentalCompany/src/main/java/com/solvd/RentalCompany/jaxb/company.xml"));
+            m.marshal(rentalCompany, new FileOutputStream("src/main/java/com/solvd/RentalCompany/jaxb/company.xml"));
         } catch (JAXBException e) {
             logger.error(String.format("Unmarshaller error"), e.getMessage());
             e.printStackTrace();

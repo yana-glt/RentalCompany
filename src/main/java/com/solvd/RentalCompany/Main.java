@@ -2,6 +2,7 @@ package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.jaxb.JaxbReader;
 import com.solvd.RentalCompany.jaxb.JaxbWriter;
+import com.solvd.RentalCompany.jaxb.RentalCompany;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 import java.time.LocalDate;
@@ -198,7 +199,8 @@ public class Main {
 //        System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
 //        DomParser.parse();
 
-        JaxbWriter.write();
-        JaxbReader.read();
+        //JaxbWriter.write();
+        RentalCompany rc = JaxbReader.read();
+        System.out.println(rc.getCars().get(2).getYear());
     }
 }

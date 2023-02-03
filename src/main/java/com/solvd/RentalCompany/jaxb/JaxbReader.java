@@ -12,17 +12,20 @@ public class JaxbReader {
 
     private final static Logger logger = LogManager.getLogger(JaxbReader.class);
 
-    public static void read(){
+    public static RentalCompany read(){
         try {
             JAXBContext context = JAXBContext.newInstance(RentalCompany.class);
             Unmarshaller unmarshaller = context.createUnmarshaller();
-            FileReader reader = new FileReader("C:/Users/Alexa/java projects/RentalCompany/src/main/java/com/solvd/RentalCompany/jaxb/company.xml");
+            FileReader reader = new FileReader("src/main/java/com/solvd/RentalCompany/jaxb/company.xml");
             RentalCompany rentalCompany = (RentalCompany)unmarshaller.unmarshal(reader);
             System.out.println(rentalCompany);
+            return rentalCompany;
         } catch (JAXBException e) {
             logger.error(String.format("Unmarshaller error"), e.getMessage());
+            return null;
         } catch (FileNotFoundException e) {
             logger.error(String.format("Failed to read information from the specified file"), e.getMessage());
+            return null;
         }
     }
 }
