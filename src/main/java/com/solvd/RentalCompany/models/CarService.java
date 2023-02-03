@@ -1,10 +1,12 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.ISavedInXmlFile;
+
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
-public class CarService {
+public class CarService implements ISavedInXmlFile {
     private Integer id;
     private Integer carId;
     private Integer serviceId;

@@ -1,8 +1,10 @@
 package com.solvd.RentalCompany.models;
 
+import com.solvd.RentalCompany.ISavedInXmlFile;
+
 import java.util.Objects;
 
-public class Service {
+public class Service implements ISavedInXmlFile {
     private Integer id;
     private String name;
     private String address;

@@ -1,16 +1,13 @@
 package com.solvd.RentalCompany;
 
-import com.solvd.RentalCompany.core.*;
-import com.solvd.RentalCompany.models.Car;
-import com.solvd.RentalCompany.models.Client;
-import com.solvd.RentalCompany.models.Employee;
-import com.solvd.RentalCompany.models.InsuranceType;
+import com.solvd.RentalCompany.models.Service;
 import com.solvd.RentalCompany.services.*;
-import java.time.LocalDate;
-import java.time.Year;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         IServiceService serviceService = new ServiceService();
 //      serviceService.createEntity(new ServiceCore("FFF", "FFF", "+48962620520", "Spain"));
 //      serviceService.createEntity(new ServiceCore("DDD", "DDD", "+48962620520", "USA"));
@@ -195,5 +192,12 @@ public class Main {
 //                new Employee(1, "Tara", "Shelton", "taraShelton@gmail.com", "+48603203210", 900.00, 1, 1),
 //                new InsuranceType(1, "A", 30.00, 6.00),
 //                LocalDate.now()));
+
+        boolean result = DomParser.validateXmlSchema("rentalCompany.xsd", "rentalCompany.xml");
+        System.out.println("rentalCompany.xml validates again rentalCompany.xse? " + result);
+        DomParser.parse();
+        List<ISavedInXmlFile> list = new ArrayList<>();
+        list = DomParser.getElementsByTagName("category");
+        System.out.println(list);
     }
 }
