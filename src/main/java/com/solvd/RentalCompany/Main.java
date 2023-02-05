@@ -1,10 +1,10 @@
 package com.solvd.RentalCompany;
 
+import com.solvd.RentalCompany.jackson.JsonWriter;
 import com.solvd.RentalCompany.jaxb.JaxbReader;
-import com.solvd.RentalCompany.jaxb.JaxbWriter;
-import com.solvd.RentalCompany.jaxb.RentalCompany;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
+
 import java.time.LocalDate;
 import java.time.Year;
 
@@ -200,7 +200,47 @@ public class Main {
 //        DomParser.parse();
 
         //JaxbWriter.write();
-        RentalCompany rc = JaxbReader.read();
-        System.out.println(rc.getCars().get(2).getYear());
+//        RentalCompany rc = JaxbReader.read();
+//        System.out.println(rc.getCars().get(2).getYear());
+
+
+        RentalCompany rentalCompany = new RentalCompany() {
+            {
+                Service service = new Service(4,"WAT service","Warsaw","+48745468787","Poland");
+                this.addService(service);
+                service = new Service(5,"FAT service","Warsaw","+48520520630","Poland");
+                this.addService(service);
+                service = new Service(6,"RAT service","Warsaw","+48501548748","Poland");
+                this.addService(service);
+
+                CarService carService = new CarService(4,1, 4,1000.00, LocalDate.of(2022,11,05));
+                this.addCarService(carService);
+                carService = new CarService(5,2,5,2000.00, LocalDate.of(2022, 10, 10));
+                this.addCarService(carService);
+                carService = new CarService(6,3,6,3000.00, LocalDate.of(2022, 12, 15));
+                this.addCarService(carService);
+
+                Car car = new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00);
+                this.addCar(car);
+                car = new Car(2, "PKT001KW945444878", "A", "Fiat", "500", "PLO7003", Year.of(2019), 115.00);
+                this.addCar(car);
+                car = new Car(3, "LTY9003HY8521P961", "B", "VolksWagen", "Polo", "PLO7003", Year.of(2019), 130.00);
+                this.addCar(car);
+
+                Category category = new Category("A", "mini cars", "Smaller than 370 cm in length.",1.20);
+                this.addCategory(category);
+                category = new Category("B", "small cars","Sizes range from 370 cm to 400 cm. ", 1.30);
+                this.addCategory(category);
+
+                TechnicalInspection technicalInspection = new TechnicalInspection(1,1, LocalDate.of(2022,11,05), "SGS Poland Sp. z o.o.");
+                this.addTechnicalInspection(technicalInspection);
+                technicalInspection = new TechnicalInspection(2,2, LocalDate.of(2022, 10, 10), "SGS Poland Sp. z o.o.");
+                this.addTechnicalInspection(technicalInspection);
+                technicalInspection = new TechnicalInspection(3,3, LocalDate.of(2022, 12, 15), "SGS Poland Sp. z o.o.");
+                this.addTechnicalInspection(technicalInspection);
+            }
+        };
+
+        JsonWriter.writeToJson(rentalCompany);
     }
 }

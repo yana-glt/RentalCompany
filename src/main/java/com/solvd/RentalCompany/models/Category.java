@@ -1,5 +1,8 @@
 package com.solvd.RentalCompany.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 import javax.xml.bind.annotation.*;
 import java.util.Objects;
 @XmlRootElement(name="category")
@@ -7,12 +10,16 @@ import java.util.Objects;
 @XmlType(name = "category", propOrder = {"id", "name", "description", "coefficient"})
 public class Category {
     @XmlAttribute(required = true)
+    @JsonProperty("id")
     private String id;
     @XmlElement(name="name")
+    @JsonProperty("name")
     private String name;
     @XmlElement(name="description")
+    @JsonProperty("description")
     private String description;
     @XmlElement(name="coefficient")
+    @JsonProperty("coefficient")
     private Double coefficient;
 
     public Category() {

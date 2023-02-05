@@ -1,5 +1,8 @@
 package com.solvd.RentalCompany.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import com.solvd.RentalCompany.jaxb.LocalDateAdapter;
 
 import javax.xml.bind.annotation.*;
@@ -11,15 +14,21 @@ import java.util.Objects;
 @XmlType(name = "car_service", propOrder = {"id", "carId", "serviceId", "price", "date"})
 public class CarService {
     @XmlAttribute(required = true)
+    @JsonProperty("id")
     private Integer id;
     @XmlElement(name="car_id")
+    @JsonProperty("car_id")
     private Integer carId;
     @XmlElement(name="service_id")
+    @JsonProperty("service_id")
     private Integer serviceId;
     @XmlElement(name="price")
+    @JsonProperty("price")
     private Double price;
     @XmlJavaTypeAdapter(type=LocalDate.class, value=LocalDateAdapter.class)
-    @XmlElement
+    @XmlElement(name="date")
+    @JsonProperty("date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "YYYY-MM-dd")
     private LocalDate date;
 
     public CarService() {
