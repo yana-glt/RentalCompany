@@ -12,6 +12,7 @@ import java.util.Objects;
 @XmlRootElement(name="technical_inspection")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "technical_inspection", propOrder = {"id", "carId", "date", "organization"})
+//@JsonRootName("technical_inspection")
 public class TechnicalInspection {
     @XmlAttribute(required = true)
     @JsonProperty("id")

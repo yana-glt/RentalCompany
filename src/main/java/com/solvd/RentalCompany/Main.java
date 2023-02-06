@@ -1,7 +1,6 @@
 package com.solvd.RentalCompany;
 
-import com.solvd.RentalCompany.jackson.JsonWriter;
-import com.solvd.RentalCompany.jaxb.JaxbReader;
+import com.solvd.RentalCompany.jackson.JsonWriterReader;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 
@@ -241,6 +240,9 @@ public class Main {
             }
         };
 
-        JsonWriter.writeToJson(rentalCompany);
+        //JsonWriterReader.writeToJson(rentalCompany);
+        RentalCompany rentComp = new RentalCompany();
+        rentComp = JsonWriterReader.readFromJson();
+        System.out.println(rentComp);
     }
 }

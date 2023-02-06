@@ -11,6 +11,7 @@ import java.util.Objects;
 @XmlRootElement(name="car")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "car", propOrder = {"id", "vin", "categoryId", "brand", "model", "number", "year", "dayPrice"})
+//@JsonRootName("car")
 public class Car {
     @XmlAttribute(required = true)
     @JsonProperty("id")
