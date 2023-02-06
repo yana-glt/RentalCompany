@@ -2,17 +2,15 @@ package com.solvd.RentalCompany.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import com.solvd.RentalCompany.jaxb.LocalDateAdapter;
-
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.util.Objects;
+
 @XmlRootElement(name="technical_inspection")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "technical_inspection", propOrder = {"id", "carId", "date", "organization"})
-//@JsonRootName("technical_inspection")
 public class TechnicalInspection {
     @XmlAttribute(required = true)
     @JsonProperty("id")
@@ -23,7 +21,7 @@ public class TechnicalInspection {
     @XmlJavaTypeAdapter(type=LocalDate.class, value= LocalDateAdapter.class)
     @XmlElement
     @JsonProperty("date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "YYYY-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate date;
     @XmlElement(name="organization")
     @JsonProperty("organization")

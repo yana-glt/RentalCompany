@@ -1,40 +1,31 @@
 package com.solvd.RentalCompany.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.solvd.RentalCompany.models.*;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
 @XmlRootElement(name="rental_company")
 @XmlAccessorType(XmlAccessType.FIELD)
-@JsonRootName("rental_company")
 public class RentalCompany {
     @XmlElementWrapper(name="services")
     @XmlElement(name="service")
     @JsonProperty("services")
-    //@JsonUnwrapped
     private ArrayList<Service> services = new ArrayList<>();
     @XmlElementWrapper(name="car_services")
     @XmlElement(name="car_service")
     @JsonProperty("car_services")
-    //@JsonUnwrapped
     private ArrayList<CarService> carServices = new ArrayList<>();
     @XmlElementWrapper(name="cars")
     @XmlElement(name="car")
     @JsonProperty("cars")
-    //@JsonUnwrapped
     private ArrayList<Car> cars = new ArrayList<>();
     @XmlElementWrapper(name="categories")
     @XmlElement(name="category")
     @JsonProperty("categories")
-    //@JsonUnwrapped
     private ArrayList<Category> categories = new ArrayList<>();
     @XmlElementWrapper(name="technical_inspections")
     @XmlElement(name="technical_inspection")
     @JsonProperty("technical_inspections")
-    //@JsonUnwrapped
     private ArrayList<TechnicalInspection> technicalInspections = new ArrayList<>();
 
     public RentalCompany() {
@@ -98,7 +89,6 @@ public class RentalCompany {
     public boolean addTechnicalInspection(TechnicalInspection technicalInspection){
         return technicalInspections.add(technicalInspection);
     }
-
 
     @Override
     public String toString() {

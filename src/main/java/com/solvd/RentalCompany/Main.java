@@ -4,11 +4,12 @@ import com.solvd.RentalCompany.jackson.JsonWriterReader;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Year;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         IServiceService serviceService = new ServiceService();
 //      serviceService.createEntity(new ServiceCore("FFF", "FFF", "+48962620520", "Spain"));
 //      serviceService.createEntity(new ServiceCore("DDD", "DDD", "+48962620520", "USA"));
@@ -240,9 +241,10 @@ public class Main {
             }
         };
 
-        //JsonWriterReader.writeToJson(rentalCompany);
+        JsonWriterReader.writeToJson(rentalCompany);
+
         RentalCompany rentComp = new RentalCompany();
-        rentComp = JsonWriterReader.readFromJson();
-        System.out.println(rentComp);
+        rentComp = JsonWriterReader.readFromJson("src/main/java/com/solvd/RentalCompany/jackson/company.json", RentalCompany.class);
+        System.out.println(rentComp.getCars().get(0).getModel());
     }
 }

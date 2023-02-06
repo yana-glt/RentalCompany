@@ -1,9 +1,7 @@
 package com.solvd.RentalCompany.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import com.solvd.RentalCompany.jaxb.YearAdapter;
-
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.Year;
@@ -11,7 +9,6 @@ import java.util.Objects;
 @XmlRootElement(name="car")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "car", propOrder = {"id", "vin", "categoryId", "brand", "model", "number", "year", "dayPrice"})
-//@JsonRootName("car")
 public class Car {
     @XmlAttribute(required = true)
     @JsonProperty("id")

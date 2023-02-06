@@ -1,14 +1,12 @@
 package com.solvd.RentalCompany.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
-
 import javax.xml.bind.annotation.*;
 import java.util.Objects;
+
 @XmlRootElement(name="category")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "category", propOrder = {"id", "name", "description", "coefficient"})
-//@JsonRootName("category")
 public class Category {
     @XmlAttribute(required = true)
     @JsonProperty("id")
