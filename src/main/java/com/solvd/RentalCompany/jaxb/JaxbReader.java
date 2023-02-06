@@ -1,5 +1,6 @@
 package com.solvd.RentalCompany.jaxb;
 
+import com.solvd.RentalCompany.models.RentalCompany;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javax.xml.bind.JAXBContext;

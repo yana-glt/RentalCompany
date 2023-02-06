@@ -1,6 +1,6 @@
-package com.solvd.RentalCompany.jaxb;
+package com.solvd.RentalCompany.models;
 
-import com.solvd.RentalCompany.models.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 
@@ -9,18 +9,23 @@ import java.util.ArrayList;
 public class RentalCompany {
     @XmlElementWrapper(name="services")
     @XmlElement(name="service")
+    @JsonProperty("services")
     private ArrayList<Service> services = new ArrayList<>();
     @XmlElementWrapper(name="car_services")
     @XmlElement(name="car_service")
+    @JsonProperty("car_services")
     private ArrayList<CarService> carServices = new ArrayList<>();
     @XmlElementWrapper(name="cars")
     @XmlElement(name="car")
+    @JsonProperty("cars")
     private ArrayList<Car> cars = new ArrayList<>();
     @XmlElementWrapper(name="categories")
     @XmlElement(name="category")
+    @JsonProperty("categories")
     private ArrayList<Category> categories = new ArrayList<>();
     @XmlElementWrapper(name="technical_inspections")
     @XmlElement(name="technical_inspection")
+    @JsonProperty("technical_inspections")
     private ArrayList<TechnicalInspection> technicalInspections = new ArrayList<>();
 
     public RentalCompany() {
@@ -84,7 +89,6 @@ public class RentalCompany {
     public boolean addTechnicalInspection(TechnicalInspection technicalInspection){
         return technicalInspections.add(technicalInspection);
     }
-
 
     @Override
     public String toString() {
