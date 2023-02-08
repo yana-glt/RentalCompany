@@ -1,15 +1,9 @@
 package com.solvd.RentalCompany;
 
-import com.solvd.RentalCompany.core.CarCore;
-import com.solvd.RentalCompany.core.CarServiceCore;
-import com.solvd.RentalCompany.core.CategoryCore;
-import com.solvd.RentalCompany.core.ServiceCore;
+import com.solvd.RentalCompany.core.*;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
-import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceImpl;
-import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceServiceImpl;
-import com.solvd.RentalCompany.services.mybatisImplementation.CategoryServiceImpl;
-import com.solvd.RentalCompany.services.mybatisImplementation.ServiceServiceImpl;
+import com.solvd.RentalCompany.services.mybatisImplementation.*;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -302,5 +296,18 @@ public class Main {
 
 //      categoryServiceImpl.updateEntity(new CategoryCore("Y", "OOOO", "sjdcnjskdcn kjs", 2.33), "A");
 //      categoryServiceImpl.updateEntity(new CategoryCore("W", "OOOO", "+kjsxnjskxnsjkxn", 3.33), "B");
+
+        ITechnicalInspectionService technicalInspectionServiceImpl = new TechnicalInspectionServiceImpl();
+
+//      System.out.println(technicalInspectionServiceImpl.getEntityById(1));
+//      System.out.println(technicalInspectionServiceImpl.getEntityById(2));
+
+//      technicalInspectionServiceImpl.removeEntityById(5);
+
+//      technicalInspectionServiceImpl.createEntity(new TechnicalInspectionCore(1, LocalDate.of(2022, 12, 12), "OOO"));
+//      technicalInspectionServiceImpl.createEntity(new TechnicalInspectionCore(2, LocalDate.of(2022, 12, 15), "OOO"));
+
+//      technicalInspectionServiceImpl.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 12), "OOO"), 10);
+//      technicalInspectionServiceImpl.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 15), "OOO"), 11);
     }
 }

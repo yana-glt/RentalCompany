@@ -22,5 +22,6 @@
         <mapper resource="mapper/service-mapper.xml"/>
         <mapper resource="mapper/carService-mapper.xml"/>
         <mapper resource="mapper/category-mapper.xml"/>
+        <mapper resource="mapper/technicalInspection-mapper.xml"/>
     </mappers>
 </configuration>

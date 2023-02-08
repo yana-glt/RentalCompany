@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.RentalCompany.dao.ITechnicalInspectionDAO">
+
+    <sql id="body">
+        t.id as id,
+        t.car_id as carId,
+        t.date as date,
+        t.organization as organization
+    </sql>
+
+    <select id="getEntityById" resultMap="technicalInspectionResultMap">
+        SELECT
+        <include refid="body"/>
+        FROM
+        technicalInspection t
+        WHERE id = #{id}
+    </select>
+
+    <insert id="createEntity" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO technicalInspection (car_id, date, organization)
+        VALUES (#{carId}, #{date}, #{organization})
+    </insert>
+
+    <update id="updateEntity">
+        UPDATE technicalInspection
+        <set>
+            <if test="carId != null">car_id=#{carId},</if>
+            <if test="date != null">date=#{date},</if>
+            <if test="organization != null">organization=#{organization},</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <delete id="removeEntityById">
+        DELETE FROM technicalInspection
+        WHERE id=#{id}
+    </delete>
+
+    <resultMap id="technicalInspectionResultMap" type="com.solvd.RentalCompany.models.TechnicalInspection" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="car_id" property="carId"/>
+        <result column="date" property="date"/>
+        <result column="organization" property="organization"/>
+    </resultMap>
+
+</mapper>
