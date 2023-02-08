@@ -1,13 +1,16 @@
 package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.core.CarCore;
+import com.solvd.RentalCompany.core.CarServiceCore;
 import com.solvd.RentalCompany.core.ServiceCore;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceImpl;
+import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceServiceImpl;
 import com.solvd.RentalCompany.services.mybatisImplementation.ServiceServiceImpl;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.Year;
 
 public class Main {
@@ -273,5 +276,17 @@ public class Main {
 
 //        serviceServiceImpl.updateEntity(new ServiceCore("OOO", "SSS", "+48962620520", "Spain"), 3);
 //        serviceServiceImpl.updateEntity(new ServiceCore("LLL", "SSS", "+48962620520", "Spain"), 4);
+
+        ICarServiceService carServiceServiceImpl = new CarServiceServiceImpl();
+//      System.out.println(carServiceServiceImpl.getEntityById(1));
+//      System.out.println(carServiceServiceImpl.getEntityById(3));
+
+//      carServiceServiceImpl.removeEntityById(8);
+
+//      carServiceServiceImpl.createEntity(new CarServiceCore(2, 1, 5000.00, LocalDate.of(2022, 12, 12)));
+//      carServiceServiceImpl.createEntity(new CarServiceCore(3, 2, 5000.00, LocalDate.of(2022, 12, 15)));
+
+//      carServiceServiceImpl.updateEntity(new CarServiceCore(10, 1, 4000.00,  LocalDate.of(2022, 12, 15)), 11);
+//      carServiceServiceImpl.updateEntity(new CarServiceCore(10, 1, 4000.00,  LocalDate.of(2022, 12, 15)), 12);
     }
 }

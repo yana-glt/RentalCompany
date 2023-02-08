@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.RentalCompany.dao.ICarServiceDAO">
+
+    <sql id="body">
+        cs.id as id,
+        cs.car_id as carId,
+        cs.service_id as serviceId,
+        cs.price as price,
+        cs.date as date
+    </sql>
+
+    <select id="getEntityById" resultMap="carServiceResultMap">
+        SELECT
+        <include refid="body"/>
+        FROM
+        carService cs
+        WHERE id = #{id}
+    </select>
+
+    <insert id="createEntity" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO carService (car_id, service_id, price, date)
+        VALUES (#{carId}, #{serviceId}, #{price}, #{date})
+    </insert>
+
+    <update id="updateEntity">
+        UPDATE carService
+        <set>
+            <if test="carId != null">car_id=#{carId},</if>
+            <if test="serviceId != null">service_id=#{serviceId},</if>
+            <if test="price != null">price=#{price},</if>
+            <if test="date != null">date=#{date},</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <delete id="removeEntityById">
+        DELETE FROM carService
+        WHERE id=#{id}
+    </delete>
+
+    <resultMap id="carServiceResultMap" type="com.solvd.RentalCompany.models.CarService" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="carId" property="carId"/>
+        <result column="serviceId" property="serviceId"/>
+        <result column="price" property="price"/>
+        <result column="date" property="date"/>
+    </resultMap>
+
+</mapper>

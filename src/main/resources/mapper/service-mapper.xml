@@ -4,18 +4,18 @@
 <mapper namespace="com.solvd.RentalCompany.dao.IServiceDAO">
 
     <sql id="body">
-        c.id as id,
-        c.name as name,
-        c.address as address,
-        c.phone as phone,
-        c.country as country
+        s.id as id,
+        s.name as name,
+        s.address as address,
+        s.phone as phone,
+        s.country as country
     </sql>
 
     <select id="getEntityById" resultMap="serviceResultMap">
         SELECT
         <include refid="body"/>
         FROM
-        service c
+        service s
         WHERE id = #{id}
     </select>
 
