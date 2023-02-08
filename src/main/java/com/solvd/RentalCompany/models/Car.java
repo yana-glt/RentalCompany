@@ -50,6 +50,16 @@ public class Car {
         this.dayPrice = dayPrice;
     }
 
+    public Car(String vin, String categoryId, String brand, String model, String number, Year year, Double dayPrice) {
+        this.vin = vin;
+        this.categoryId = categoryId;
+        this.brand = brand;
+        this.model = model;
+        this.number = number;
+        this.year = year;
+        this.dayPrice = dayPrice;
+    }
+
     public Integer getId() {
         return id;
     }
