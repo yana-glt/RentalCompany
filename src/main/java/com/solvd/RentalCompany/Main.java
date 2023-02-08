@@ -2,11 +2,13 @@ package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.core.CarCore;
 import com.solvd.RentalCompany.core.CarServiceCore;
+import com.solvd.RentalCompany.core.CategoryCore;
 import com.solvd.RentalCompany.core.ServiceCore;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceImpl;
 import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceServiceImpl;
+import com.solvd.RentalCompany.services.mybatisImplementation.CategoryServiceImpl;
 import com.solvd.RentalCompany.services.mybatisImplementation.ServiceServiceImpl;
 
 import java.io.IOException;
@@ -288,5 +290,17 @@ public class Main {
 
 //      carServiceServiceImpl.updateEntity(new CarServiceCore(10, 1, 4000.00,  LocalDate.of(2022, 12, 15)), 11);
 //      carServiceServiceImpl.updateEntity(new CarServiceCore(10, 1, 4000.00,  LocalDate.of(2022, 12, 15)), 12);
+
+        ICategoryService categoryServiceImpl = new CategoryServiceImpl();
+//      System.out.println(categoryServiceImpl.getEntityById("A"));
+//      System.out.println(categoryServiceImpl.getEntityById("B"));
+
+//      categoryServiceImpl.removeEntityById("D");
+
+//      categoryServiceImpl.createEntity(new CategoryCore("Y", "YYYY", "sjdcnjskdcn kjs", 2.33));
+//      categoryServiceImpl.createEntity(new CategoryCore("W", "WWWW", "+kjsxnjskxnsjkxn", 3.33));
+
+//      categoryServiceImpl.updateEntity(new CategoryCore("Y", "OOOO", "sjdcnjskdcn kjs", 2.33), "A");
+//      categoryServiceImpl.updateEntity(new CategoryCore("W", "OOOO", "+kjsxnjskxnsjkxn", 3.33), "B");
     }
 }

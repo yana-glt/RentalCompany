@@ -21,5 +21,6 @@
         <mapper resource="mapper/car-mapper.xml"/>
         <mapper resource="mapper/service-mapper.xml"/>
         <mapper resource="mapper/carService-mapper.xml"/>
+        <mapper resource="mapper/category-mapper.xml"/>
     </mappers>
 </configuration>

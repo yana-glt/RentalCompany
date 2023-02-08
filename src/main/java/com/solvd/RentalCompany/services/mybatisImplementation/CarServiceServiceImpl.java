@@ -2,21 +2,16 @@ package com.solvd.RentalCompany.services.mybatisImplementation;
 
 import com.solvd.RentalCompany.core.CarServiceCore;
 import com.solvd.RentalCompany.dao.ICarServiceDAO;
-import com.solvd.RentalCompany.dao.IServiceDAO;
 import com.solvd.RentalCompany.exceptionHandlers.ObjectNotFoundException;
 import com.solvd.RentalCompany.mappers.CarServiceMapper;
-import com.solvd.RentalCompany.mappers.ServiceMapper;
 import com.solvd.RentalCompany.mappers.mapperInterfaces.ICarServiceMapper;
-import com.solvd.RentalCompany.mappers.mapperInterfaces.IServiceMapper;
 import com.solvd.RentalCompany.models.CarService;
-import com.solvd.RentalCompany.models.Service;
 import com.solvd.RentalCompany.services.ICarServiceService;
 import com.solvd.RentalCompany.util.MybatisDAOFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.Optional;
 
 public class CarServiceServiceImpl implements ICarServiceService {
