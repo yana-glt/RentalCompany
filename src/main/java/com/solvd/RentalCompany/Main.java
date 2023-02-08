@@ -1,9 +1,11 @@
 package com.solvd.RentalCompany;
 
 import com.solvd.RentalCompany.core.CarCore;
+import com.solvd.RentalCompany.core.ServiceCore;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
 import com.solvd.RentalCompany.services.mybatisImplementation.CarServiceImpl;
+import com.solvd.RentalCompany.services.mybatisImplementation.ServiceServiceImpl;
 
 import java.io.IOException;
 import java.time.Year;
@@ -255,9 +257,21 @@ public class Main {
 //        carServiceImpl.createEntity(new CarCore("KLX5484789DFCDV", "A", "Fiat", "500", "PL89564", Year.of(2020), 120.00));
 //        carServiceImpl.createEntity(new CarCore("KJO894515SDCS48", "B", "Ford", "Fiesta", "PL00265",Year.of(2020), 140.00));
 
-        carServiceImpl.updateEntity(new CarCore("00000000", "A",
-                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 11);
-        carServiceImpl.updateEntity(new CarCore("000000", "A",
-                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 12);
+//        carServiceImpl.updateEntity(new CarCore("00000000", "A",
+//                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 11);
+//        carServiceImpl.updateEntity(new CarCore("000000", "A",
+//                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 12);
+
+        IServiceService serviceServiceImpl = new ServiceServiceImpl();
+//        System.out.println(serviceServiceImpl.getEntityById(3));
+//        System.out.println(serviceServiceImpl.getEntityById(4));
+//
+//        serviceServiceImpl.removeEntityById(6);
+//
+//        serviceServiceImpl.createEntity(new ServiceCore("FFF", "FFF", "+48962620520", "Spain"));
+//        serviceServiceImpl.createEntity(new ServiceCore("DDD", "DDD", "+48962620520", "USA"));
+
+//        serviceServiceImpl.updateEntity(new ServiceCore("OOO", "SSS", "+48962620520", "Spain"), 3);
+//        serviceServiceImpl.updateEntity(new ServiceCore("LLL", "SSS", "+48962620520", "Spain"), 4);
     }
 }

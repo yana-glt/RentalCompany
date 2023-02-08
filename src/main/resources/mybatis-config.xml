@@ -19,5 +19,6 @@
     </environments>
     <mappers>
         <mapper resource="mapper/car-mapper.xml"/>
+        <mapper resource="mapper/service-mapper.xml"/>
     </mappers>
 </configuration>
