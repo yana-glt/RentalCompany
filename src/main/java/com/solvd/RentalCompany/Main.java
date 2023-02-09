@@ -1,8 +1,9 @@
 package com.solvd.RentalCompany;
 
-import com.solvd.RentalCompany.jackson.JsonWriterReader;
+import com.solvd.RentalCompany.core.*;
 import com.solvd.RentalCompany.models.*;
 import com.solvd.RentalCompany.services.*;
+import com.solvd.RentalCompany.services.mybatisImplementation.*;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -203,48 +204,110 @@ public class Main {
 //        RentalCompany rc = JaxbReader.read();
 //        System.out.println(rc.getCars().get(2).getYear());
 
+//        RentalCompany rentalCompany = new RentalCompany() {
+//            {
+//                Service service = new Service(4,"WAT service","Warsaw","+48745468787","Poland");
+//                this.addService(service);
+//                service = new Service(5,"FAT service","Warsaw","+48520520630","Poland");
+//                this.addService(service);
+//                service = new Service(6,"RAT service","Warsaw","+48501548748","Poland");
+//                this.addService(service);
+//
+//                CarService carService = new CarService(4,1, 4,1000.00, LocalDate.of(2022,11,05));
+//                this.addCarService(carService);
+//                carService = new CarService(5,2,5,2000.00, LocalDate.of(2022, 10, 10));
+//                this.addCarService(carService);
+//                carService = new CarService(6,3,6,3000.00, LocalDate.of(2022, 12, 15));
+//                this.addCarService(carService);
+//
+//                Car car = new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00);
+//                this.addCar(car);
+//                car = new Car(2, "PKT001KW945444878", "A", "Fiat", "500", "PLO7003", Year.of(2019), 115.00);
+//                this.addCar(car);
+//                car = new Car(3, "LTY9003HY8521P961", "B", "VolksWagen", "Polo", "PLO7003", Year.of(2019), 130.00);
+//                this.addCar(car);
+//
+//                Category category = new Category("A", "mini cars", "Smaller than 370 cm in length.",1.20);
+//                this.addCategory(category);
+//                category = new Category("B", "small cars","Sizes range from 370 cm to 400 cm. ", 1.30);
+//                this.addCategory(category);
+//
+//                TechnicalInspection technicalInspection = new TechnicalInspection(1,1, LocalDate.of(2022,11,05), "SGS Poland Sp. z o.o.");
+//                this.addTechnicalInspection(technicalInspection);
+//                technicalInspection = new TechnicalInspection(2,2, LocalDate.of(2022, 10, 10), "SGS Poland Sp. z o.o.");
+//                this.addTechnicalInspection(technicalInspection);
+//                technicalInspection = new TechnicalInspection(3,3, LocalDate.of(2022, 12, 15), "SGS Poland Sp. z o.o.");
+//                this.addTechnicalInspection(technicalInspection);
+//            }
+//        };
+//
+//        JsonWriterReader.writeToJson(rentalCompany);
+//
+//        RentalCompany rentComp = new RentalCompany();
+//        rentComp = JsonWriterReader.readFromJson("src/main/java/com/solvd/RentalCompany/jackson/company.json", RentalCompany.class);
+//        System.out.println(rentComp.getCars().get(0).getModel());
 
-        RentalCompany rentalCompany = new RentalCompany() {
-            {
-                Service service = new Service(4,"WAT service","Warsaw","+48745468787","Poland");
-                this.addService(service);
-                service = new Service(5,"FAT service","Warsaw","+48520520630","Poland");
-                this.addService(service);
-                service = new Service(6,"RAT service","Warsaw","+48501548748","Poland");
-                this.addService(service);
+        ICarServiceS carServiceImpl = new CarServiceImpl();
+//        System.out.println(carServiceImpl.getEntityById(3));
+//        System.out.println(carServiceImpl.getEntityById(4));
+//
+//        carServiceImpl.removeEntityById(10);
 
-                CarService carService = new CarService(4,1, 4,1000.00, LocalDate.of(2022,11,05));
-                this.addCarService(carService);
-                carService = new CarService(5,2,5,2000.00, LocalDate.of(2022, 10, 10));
-                this.addCarService(carService);
-                carService = new CarService(6,3,6,3000.00, LocalDate.of(2022, 12, 15));
-                this.addCarService(carService);
+//        carServiceImpl.createEntity(new CarCore("KLX5484789DFCDV", "A", "Fiat", "500", "PL89564", Year.of(2020), 120.00));
+//        carServiceImpl.createEntity(new CarCore("KJO894515SDCS48", "B", "Ford", "Fiesta", "PL00265",Year.of(2020), 140.00));
 
-                Car car = new Car(1, "XLM8592KM00152L56", "A", "Kia", "Picanto", "RJA4198", Year.of(2020), 100.00);
-                this.addCar(car);
-                car = new Car(2, "PKT001KW945444878", "A", "Fiat", "500", "PLO7003", Year.of(2019), 115.00);
-                this.addCar(car);
-                car = new Car(3, "LTY9003HY8521P961", "B", "VolksWagen", "Polo", "PLO7003", Year.of(2019), 130.00);
-                this.addCar(car);
+//        carServiceImpl.updateEntity(new CarCore("00000000", "A",
+//                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 11);
+//        carServiceImpl.updateEntity(new CarCore("000000", "A",
+//                "Fiat", "500", "PL89564", Year.of(2020), 120.00), 12);
 
-                Category category = new Category("A", "mini cars", "Smaller than 370 cm in length.",1.20);
-                this.addCategory(category);
-                category = new Category("B", "small cars","Sizes range from 370 cm to 400 cm. ", 1.30);
-                this.addCategory(category);
+        IServiceService serviceServiceImpl = new ServiceServiceImpl();
+//        System.out.println(serviceServiceImpl.getEntityById(3));
+//        System.out.println(serviceServiceImpl.getEntityById(4));
+//
+//        serviceServiceImpl.removeEntityById(6);
+//
+//        serviceServiceImpl.createEntity(new ServiceCore("FFF", "FFF", "+48962620520", "Spain"));
+//        serviceServiceImpl.createEntity(new ServiceCore("DDD", "DDD", "+48962620520", "USA"));
 
-                TechnicalInspection technicalInspection = new TechnicalInspection(1,1, LocalDate.of(2022,11,05), "SGS Poland Sp. z o.o.");
-                this.addTechnicalInspection(technicalInspection);
-                technicalInspection = new TechnicalInspection(2,2, LocalDate.of(2022, 10, 10), "SGS Poland Sp. z o.o.");
-                this.addTechnicalInspection(technicalInspection);
-                technicalInspection = new TechnicalInspection(3,3, LocalDate.of(2022, 12, 15), "SGS Poland Sp. z o.o.");
-                this.addTechnicalInspection(technicalInspection);
-            }
-        };
+//        serviceServiceImpl.updateEntity(new ServiceCore("OOO", "SSS", "+48962620520", "Spain"), 3);
+//        serviceServiceImpl.updateEntity(new ServiceCore("LLL", "SSS", "+48962620520", "Spain"), 4);
 
-        JsonWriterReader.writeToJson(rentalCompany);
+        ICarServiceService carServiceServiceImpl = new CarServiceServiceImpl();
+//      System.out.println(carServiceServiceImpl.getEntityById(1));
+//      System.out.println(carServiceServiceImpl.getEntityById(3));
 
-        RentalCompany rentComp = new RentalCompany();
-        rentComp = JsonWriterReader.readFromJson("src/main/java/com/solvd/RentalCompany/jackson/company.json", RentalCompany.class);
-        System.out.println(rentComp.getCars().get(0).getModel());
+//      carServiceServiceImpl.removeEntityById(8);
+
+//      carServiceServiceImpl.createEntity(new CarServiceCore(2, 1, 5000.00, LocalDate.of(2022, 12, 12)));
+//      carServiceServiceImpl.createEntity(new CarServiceCore(3, 2, 5000.00, LocalDate.of(2022, 12, 15)));
+
+//      carServiceServiceImpl.updateEntity(new CarServiceCore(10, 1, 4000.00,  LocalDate.of(2022, 12, 15)), 11);
+//      carServiceServiceImpl.updateEntity(new CarServiceCore(10, 1, 4000.00,  LocalDate.of(2022, 12, 15)), 12);
+
+        ICategoryService categoryServiceImpl = new CategoryServiceImpl();
+//      System.out.println(categoryServiceImpl.getEntityById("A"));
+//      System.out.println(categoryServiceImpl.getEntityById("B"));
+
+//      categoryServiceImpl.removeEntityById("D");
+
+//      categoryServiceImpl.createEntity(new CategoryCore("Y", "YYYY", "sjdcnjskdcn kjs", 2.33));
+//      categoryServiceImpl.createEntity(new CategoryCore("W", "WWWW", "+kjsxnjskxnsjkxn", 3.33));
+
+//      categoryServiceImpl.updateEntity(new CategoryCore("Y", "OOOO", "sjdcnjskdcn kjs", 2.33), "A");
+//      categoryServiceImpl.updateEntity(new CategoryCore("W", "OOOO", "+kjsxnjskxnsjkxn", 3.33), "B");
+
+        ITechnicalInspectionService technicalInspectionServiceImpl = new TechnicalInspectionServiceImpl();
+
+//      System.out.println(technicalInspectionServiceImpl.getEntityById(1));
+//      System.out.println(technicalInspectionServiceImpl.getEntityById(2));
+
+//      technicalInspectionServiceImpl.removeEntityById(5);
+
+//      technicalInspectionServiceImpl.createEntity(new TechnicalInspectionCore(1, LocalDate.of(2022, 12, 12), "OOO"));
+//      technicalInspectionServiceImpl.createEntity(new TechnicalInspectionCore(2, LocalDate.of(2022, 12, 15), "OOO"));
+
+//      technicalInspectionServiceImpl.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 12), "OOO"), 10);
+//      technicalInspectionServiceImpl.updateEntity(new TechnicalInspectionCore(10, LocalDate.of(2022, 12, 15), "OOO"), 11);
     }
 }

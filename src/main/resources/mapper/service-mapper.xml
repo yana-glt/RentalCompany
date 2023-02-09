@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.RentalCompany.dao.IServiceDAO">
+
+    <sql id="body">
+        s.id as id,
+        s.name as name,
+        s.address as address,
+        s.phone as phone,
+        s.country as country
+    </sql>
+
+    <select id="getEntityById" resultMap="serviceResultMap">
+        SELECT
+        <include refid="body"/>
+        FROM
+        service s
+        WHERE id = #{id}
+    </select>
+
+    <insert id="createEntity" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO service (name, address, phone, country)
+        VALUES (#{name}, #{address}, #{phone}, #{country})
+    </insert>
+
+    <update id="updateEntity">
+        UPDATE service
+        <set>
+            <if test="name != null">name=#{name},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="country != null">country=#{country},</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <delete id="removeEntityById">
+        DELETE FROM service
+        WHERE id=#{id}
+    </delete>
+
+    <resultMap id="serviceResultMap" type="com.solvd.RentalCompany.models.Service" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="address" property="address"/>
+        <result column="phone" property="phone"/>
+        <result column="country" property="country"/>
+    </resultMap>
+
+</mapper>

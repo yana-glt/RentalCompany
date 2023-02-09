@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.RentalCompany.dao.ICategoryDAO">
+
+    <sql id="body">
+        cat.id as id,
+        cat.name as name,
+        cat.description as description,
+        cat.coefficient as coefficient
+    </sql>
+
+    <select id="getEntityById" resultMap="categoryResultMap">
+        SELECT
+        <include refid="body"/>
+        FROM
+        category cat
+        WHERE id=#{id}
+    </select>
+
+    <insert id="createEntity" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO category (name, description, coefficient)
+        VALUES (#{name}, #{description}, #{coefficient})
+    </insert>
+
+    <update id="updateEntity">
+        UPDATE category
+        <set>
+            <if test="name != null">name=#{name},</if>
+            <if test="description != null">description=#{description},</if>
+            <if test="coefficient != null">coefficient=#{coefficient},</if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <delete id="removeEntityById">
+        DELETE FROM category
+        WHERE id=#{id}
+    </delete>
+
+    <resultMap id="categoryResultMap" type="com.solvd.RentalCompany.models.Category" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="coefficient" property="coefficient"/>
+    </resultMap>
+
+</mapper>
